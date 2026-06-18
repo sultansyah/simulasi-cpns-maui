@@ -8,8 +8,8 @@
     FlyoutBehavior="Disabled"
     Shell.NavBarIsVisible="False"
     Shell.TabBarBackgroundColor="White"
-    Shell.TabBarTitleColor="#059669"
-    Shell.TabBarForegroundColor="#059669"
+    Shell.TabBarTitleColor="#E11D48"
+    Shell.TabBarForegroundColor="#E11D48"
     Shell.TabBarUnselectedColor="#6B7280">
 
     <!-- Page awal -->

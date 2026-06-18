@@ -16,3 +16,14 @@ This app helps users practice CPNS-style questions and improve their preparation
 - C#
 - XAML
 - SQLite
+
+## Color Theme
+
+This app uses a motivational red theme to create a more energetic and encouraging learning atmosphere.
+
+- Primary Red: `#E11D48`
+- Dark Red: `#BE123C`
+- Accent Pink Red: `#FB7185`
+- Soft Background: `#FFF1F2`
+- Soft Surface: `#FFE4E6`
+- Main Text: `#1F2937`

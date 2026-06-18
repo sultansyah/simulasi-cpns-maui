@@ -10,7 +10,7 @@
 
     <Grid RowDefinitions="Auto,*">
 
-        <!-- Header Green Background -->
+        <!-- Header Motivational Background -->
         <Grid
             Grid.Row="0"
             HeightRequest="260"
@@ -18,8 +18,8 @@
 
             <Grid.Background>
                 <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
-                    <GradientStop Color="#10B981" Offset="0.0" />
-                    <GradientStop Color="#047857" Offset="1.0" />
+                    <GradientStop Color="#FB7185" Offset="0.0" />
+                    <GradientStop Color="#BE123C" Offset="1.0" />
                 </LinearGradientBrush>
             </Grid.Background>
 
@@ -37,18 +37,21 @@
                         Text="Semangat belajar hari ini!"
                         FontSize="15"
                         FontAttributes="Bold"
-                        TextColor="#E8FFF5" />
+                        TextColor="#FFF1F2" />
                 </VerticalStackLayout>
 
                 <Grid
                     Grid.Column="1"
-                    WidthRequest="46"
-                    HeightRequest="46"
+                    x:Name="MascotContainer"
+                    WidthRequest="110"
+                    HeightRequest="110"
                     VerticalOptions="Start">
 
-                    <Label
-                        Text="🔥"
-                        FontSize="28"
+                    <Image
+                        Source="maskot_cpns.svg"
+                        WidthRequest="110"
+                        HeightRequest="110"
+                        Aspect="AspectFit"
                         HorizontalOptions="Center"
                         VerticalOptions="Center" />
                 </Grid>
@@ -64,7 +67,7 @@
 
                 <!-- Progress Card -->
                 <Border
-                    BackgroundColor="#F8FFFC"
+                    BackgroundColor="#FFF1F2"
                     StrokeThickness="0"
                     StrokeShape="RoundRectangle 22"
                     Padding="22,18">
@@ -95,7 +98,7 @@
                                 <Ellipse
                                     WidthRequest="92"
                                     HeightRequest="92"
-                                    Stroke="#D1FAE5"
+                                    Stroke="#FECDD3"
                                     StrokeThickness="8"
                                     Fill="Transparent"
                                     HorizontalOptions="Center"
@@ -104,7 +107,7 @@
                                 <Ellipse
                                     WidthRequest="92"
                                     HeightRequest="92"
-                                    Stroke="#059669"
+                                    Stroke="#E11D48"
                                     StrokeThickness="8"
                                     Fill="Transparent"
                                     HorizontalOptions="Center"
@@ -114,7 +117,7 @@
                                     WidthRequest="72"
                                     HeightRequest="72"
                                     StrokeThickness="0"
-                                    BackgroundColor="#F8FFFC"
+                                    BackgroundColor="#FFF1F2"
                                     StrokeShape="RoundRectangle 36"
                                     HorizontalOptions="Center"
                                     VerticalOptions="Center">
@@ -155,7 +158,7 @@
                                         Text="120"
                                         FontSize="22"
                                         FontAttributes="Bold"
-                                        TextColor="#047857" />
+                                        TextColor="#BE123C" />
                                 </VerticalStackLayout>
 
                                 <VerticalStackLayout Spacing="2">
@@ -168,7 +171,7 @@
                                         Text="78,4"
                                         FontSize="22"
                                         FontAttributes="Bold"
-                                        TextColor="#047857" />
+                                        TextColor="#BE123C" />
                                 </VerticalStackLayout>
 
                             </VerticalStackLayout>
@@ -205,7 +208,7 @@
                         <Border
                             WidthRequest="38"
                             HeightRequest="38"
-                            BackgroundColor="#ECFDF5"
+                            BackgroundColor="#FFE4E6"
                             StrokeThickness="0"
                             StrokeShape="RoundRectangle 10"
                             VerticalOptions="Center">

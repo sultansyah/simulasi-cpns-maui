@@ -30,7 +30,7 @@
                                 Text="Selamat Datang!"
                                 FontSize="24"
                                 FontAttributes="Bold"
-                                TextColor="#047857" />
+                                TextColor="#BE123C" />
 
                             <Label
                                 Text="Sebelum mulai, lengkapi&#10;data dirimu terlebih dahulu."
@@ -45,7 +45,7 @@
                             HeightRequest="110">
 
                             <Ellipse
-                                Fill="#E8F7EF"
+                                Fill="#FFF1F2"
                                 WidthRequest="96"
                                 HeightRequest="96"
                                 HorizontalOptions="Center"
@@ -54,7 +54,7 @@
                             <Border
                                 WidthRequest="58"
                                 HeightRequest="76"
-                                BackgroundColor="#2FBF71"
+                                BackgroundColor="#E11D48"
                                 StrokeThickness="0"
                                 StrokeShape="RoundRectangle 8"
                                 Rotation="5"
@@ -150,7 +150,7 @@
                         <Switch
                             x:Name="ReminderSwitch"
                             Grid.Column="1"
-                            OnColor="#059669"
+                            OnColor="#E11D48"
                             ThumbColor="White"
                             VerticalOptions="Center" />
                     </Grid>
@@ -195,7 +195,7 @@
 
                     <Button
                         Text="Simpan &amp; Mulai"
-                        BackgroundColor="#059669"
+                        BackgroundColor="#E11D48"
                         TextColor="White"
                         FontAttributes="Bold"
                         FontSize="16"

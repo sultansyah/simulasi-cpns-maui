@@ -5,7 +5,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     NavigationPage.HasNavigationBar="False"
     Shell.NavBarIsVisible="False"
-    BackgroundColor="#F7FFFB">
+    BackgroundColor="#FFF1F2">
 
     <Grid>
 
@@ -13,11 +13,11 @@
         <Border
             StrokeThickness="0"
             StrokeShape="RoundRectangle 30"
-            BackgroundColor="#DFF7EB">
+            BackgroundColor="#FFE4E6">
 
             <Border.Shadow>
                 <Shadow
-                    Brush="#0B2F22"
+                    Brush="#4C0519"
                     Opacity="0.16"
                     Radius="24"
                     Offset="0,10" />
@@ -28,9 +28,9 @@
                 <!-- Background Gradient -->
                 <Grid.Background>
                     <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
-                        <GradientStop Color="#F4FFFA" Offset="0.0" />
-                        <GradientStop Color="#DDF8EA" Offset="0.45" />
-                        <GradientStop Color="#BFEAD2" Offset="1.0" />
+                        <GradientStop Color="#FFF8F8" Offset="0.0" />
+                        <GradientStop Color="#FFE4E6" Offset="0.45" />
+                        <GradientStop Color="#FDA4AF" Offset="1.0" />
                     </LinearGradientBrush>
                 </Grid.Background>
 
@@ -47,7 +47,7 @@
                 <Ellipse
                     WidthRequest="150"
                     HeightRequest="150"
-                    Fill="#9FE1C1"
+                    Fill="#FDA4AF"
                     Opacity="0.28"
                     HorizontalOptions="End"
                     VerticalOptions="Start"
@@ -83,21 +83,21 @@
 
                 <!-- Bottom Waves -->
                 <Path
-                    Fill="#BCE8D2"
+                    Fill="#FECDD3"
                     Opacity="0.58"
                     VerticalOptions="End"
                     Aspect="Fill"
                     Data="M0,280 C70,230 135,305 215,258 C295,210 355,260 456,218 L456,456 L0,456 Z" />
 
                 <Path
-                    Fill="#9FDCBE"
+                    Fill="#FDA4AF"
                     Opacity="0.44"
                     VerticalOptions="End"
                     Aspect="Fill"
                     Data="M0,330 C82,275 158,355 238,305 C320,255 375,325 456,282 L456,456 L0,456 Z" />
 
                 <Path
-                    Fill="#7CCDA9"
+                    Fill="#FB7185"
                     Opacity="0.26"
                     VerticalOptions="End"
                     Aspect="Fill"
@@ -121,7 +121,7 @@
 
                         <Border.Shadow>
                             <Shadow
-                                Brush="#0B2F22"
+                                Brush="#4C0519"
                                 Opacity="0.10"
                                 Radius="18"
                                 Offset="0,8" />
@@ -132,7 +132,7 @@
                                 Text="✓"
                                 FontSize="46"
                                 FontAttributes="Bold"
-                                TextColor="#138754"
+                                TextColor="#E11D48"
                                 HorizontalTextAlignment="Center"
                                 VerticalTextAlignment="Center" />
                         </Grid>
@@ -144,14 +144,14 @@
                             Text="Belajar Hari Ini"
                             FontSize="38"
                             FontAttributes="Bold"
-                            TextColor="#0F6B43"
+                            TextColor="#9F1239"
                             HorizontalTextAlignment="Center" />
 
                         <Label
                             Text="Lolos CPNS Impian!"
                             FontSize="34"
                             FontAttributes="Bold"
-                            TextColor="#138754"
+                            TextColor="#E11D48"
                             HorizontalTextAlignment="Center" />
                     </VerticalStackLayout>
 
@@ -160,7 +160,7 @@
                         Text="Latihan soal, dan review pembahasan dalam satu aplikasi."
                         FontSize="15"
                         LineHeight="1.25"
-                        TextColor="#4B7D66"
+                        TextColor="#9F1239"
                         HorizontalTextAlignment="Center"
                         MaximumWidthRequest="300" />
 
@@ -172,14 +172,14 @@
 
                         <ActivityIndicator
                             IsRunning="True"
-                            Color="#138754"
+                            Color="#E11D48"
                             WidthRequest="32"
                             HeightRequest="32" />
 
                         <Label
                             Text="Menyiapkan aplikasi..."
                             FontSize="13"
-                            TextColor="#5D8A75"
+                            TextColor="#BE123C"
                             HorizontalTextAlignment="Center" />
                     </VerticalStackLayout>
 
