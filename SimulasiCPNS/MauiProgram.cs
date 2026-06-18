@@ -17,15 +17,15 @@ namespace SimulasiCPNS
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
                 });
 
-#if DEBUG
-    		builder.Logging.AddDebug();
-
             builder.Services.AddSingleton<DatabaseService>();
             builder.Services.AddSingleton<SettingService>();
+            builder.Services.AddSingleton<AppShell>();
 
-            builder.Services.AddTransient<SplashPage>();
             builder.Services.AddTransient<OnboardingPage>();
             builder.Services.AddTransient<HomePage>();
+
+#if DEBUG
+    		builder.Logging.AddDebug();
 #endif
 
             return builder.Build();
