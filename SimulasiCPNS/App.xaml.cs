@@ -7,6 +7,9 @@ namespace SimulasiCPNS
         public App()
         {
             InitializeComponent();
+
+            // force to light theme
+            UserAppTheme = AppTheme.Light;
         }
 
         protected override Window CreateWindow(IActivationState? activationState)
