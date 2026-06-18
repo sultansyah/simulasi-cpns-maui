@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SimulasiCPNS.Views.HomePage"
+             Title="HomePage">
+    <ScrollView>
+        <VerticalStackLayout Padding="24" Spacing="20">
+
+            <Label
+                x:Name="GreetingLabel"
+                Text="Halo 👋"
+                FontSize="26"
+                FontAttributes="Bold"
+                TextColor="#0F172A" />
+
+            <Frame
+                BackgroundColor="#D1FAE5"
+                CornerRadius="20"
+                BorderColor="Transparent"
+                Padding="20">
+
+                <VerticalStackLayout Spacing="8">
+                    <Label
+                        Text="Progress Singkat"
+                        FontSize="16"
+                        FontAttributes="Bold"
+                        TextColor="#047857" />
+
+                    <Label
+                        Text="Belum ada latihan. Mulai kerjakan soal pertamamu."
+                        FontSize="14"
+                        TextColor="#065F46" />
+                </VerticalStackLayout>
+            </Frame>
+
+            <Button
+                Text="Practice"
+                BackgroundColor="#10B981"
+                TextColor="White"
+                CornerRadius="16"
+                HeightRequest="52" />
+
+            <Button
+                Text="Simulation"
+                BackgroundColor="#F59E0B"
+                TextColor="White"
+                CornerRadius="16"
+                HeightRequest="52" />
+
+            <Button
+                Text="Bookmark"
+                BackgroundColor="White"
+                TextColor="#0F172A"
+                BorderColor="#CBD5E1"
+                BorderWidth="1"
+                CornerRadius="16"
+                HeightRequest="52" />
+
+            <Button
+                Text="Progress"
+                BackgroundColor="White"
+                TextColor="#0F172A"
+                BorderColor="#CBD5E1"
+                BorderWidth="1"
+                CornerRadius="16"
+                HeightRequest="52" />
+
+            <Button
+                Text="Setting"
+                BackgroundColor="White"
+                TextColor="#0F172A"
+                BorderColor="#CBD5E1"
+                BorderWidth="1"
+                CornerRadius="16"
+                HeightRequest="52" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

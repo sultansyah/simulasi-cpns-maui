@@ -1,4 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
+using SimulasiCPNS.Services;
+using SimulasiCPNS.Views;
 
 namespace SimulasiCPNS
 {
@@ -17,6 +19,13 @@ namespace SimulasiCPNS
 
 #if DEBUG
     		builder.Logging.AddDebug();
+
+            builder.Services.AddSingleton<DatabaseService>();
+            builder.Services.AddSingleton<SettingService>();
+
+            builder.Services.AddTransient<SplashPage>();
+            builder.Services.AddTransient<OnboardingPage>();
+            builder.Services.AddTransient<HomePage>();
 #endif
 
             return builder.Build();

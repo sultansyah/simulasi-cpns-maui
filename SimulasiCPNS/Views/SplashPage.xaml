@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="SimulasiCPNS.Views.SplashPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    NavigationPage.HasNavigationBar="False"
+    Shell.NavBarIsVisible="False"
+    BackgroundColor="#F7FFFB">
+
+    <Grid>
+
+        <!-- Main Card -->
+        <Border
+            StrokeThickness="0"
+            StrokeShape="RoundRectangle 30"
+            BackgroundColor="#DFF7EB">
+
+            <Border.Shadow>
+                <Shadow
+                    Brush="#0B2F22"
+                    Opacity="0.16"
+                    Radius="24"
+                    Offset="0,10" />
+            </Border.Shadow>
+
+            <Grid>
+
+                <!-- Background Gradient -->
+                <Grid.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                        <GradientStop Color="#F4FFFA" Offset="0.0" />
+                        <GradientStop Color="#DDF8EA" Offset="0.45" />
+                        <GradientStop Color="#BFEAD2" Offset="1.0" />
+                    </LinearGradientBrush>
+                </Grid.Background>
+
+                <!-- Decorative Blobs -->
+                <Ellipse
+                    WidthRequest="190"
+                    HeightRequest="190"
+                    Fill="#FFFFFF"
+                    Opacity="0.35"
+                    HorizontalOptions="Start"
+                    VerticalOptions="Start"
+                    Margin="-70,-55,0,0" />
+
+                <Ellipse
+                    WidthRequest="150"
+                    HeightRequest="150"
+                    Fill="#9FE1C1"
+                    Opacity="0.28"
+                    HorizontalOptions="End"
+                    VerticalOptions="Start"
+                    Margin="0,35,-55,0" />
+
+                <Ellipse
+                    WidthRequest="220"
+                    HeightRequest="220"
+                    Fill="#FFFFFF"
+                    Opacity="0.26"
+                    HorizontalOptions="End"
+                    VerticalOptions="End"
+                    Margin="0,0,-95,-85" />
+
+                <!-- Small Soft Clouds -->
+                <Ellipse
+                    WidthRequest="100"
+                    HeightRequest="38"
+                    Fill="#FFFFFF"
+                    Opacity="0.65"
+                    HorizontalOptions="Start"
+                    VerticalOptions="Start"
+                    Margin="-40,130,0,0" />
+
+                <Ellipse
+                    WidthRequest="86"
+                    HeightRequest="32"
+                    Fill="#FFFFFF"
+                    Opacity="0.55"
+                    HorizontalOptions="End"
+                    VerticalOptions="Start"
+                    Margin="0,150,-28,0" />
+
+                <!-- Bottom Waves -->
+                <Path
+                    Fill="#BCE8D2"
+                    Opacity="0.58"
+                    VerticalOptions="End"
+                    Aspect="Fill"
+                    Data="M0,280 C70,230 135,305 215,258 C295,210 355,260 456,218 L456,456 L0,456 Z" />
+
+                <Path
+                    Fill="#9FDCBE"
+                    Opacity="0.44"
+                    VerticalOptions="End"
+                    Aspect="Fill"
+                    Data="M0,330 C82,275 158,355 238,305 C320,255 375,325 456,282 L456,456 L0,456 Z" />
+
+                <Path
+                    Fill="#7CCDA9"
+                    Opacity="0.26"
+                    VerticalOptions="End"
+                    Aspect="Fill"
+                    Data="M0,382 C90,320 165,405 260,350 C340,305 392,360 456,335 L456,456 L0,456 Z" />
+
+                <!-- Main Content -->
+                <VerticalStackLayout
+                    Spacing="22"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    Padding="28"
+                    Margin="0,-10,0,0">
+
+                    <!-- Icon Card -->
+                    <Border
+                        WidthRequest="92"
+                        HeightRequest="92"
+                        StrokeThickness="0"
+                        StrokeShape="RoundRectangle 28"
+                        HorizontalOptions="Center">
+
+                        <Border.Shadow>
+                            <Shadow
+                                Brush="#0B2F22"
+                                Opacity="0.10"
+                                Radius="18"
+                                Offset="0,8" />
+                        </Border.Shadow>
+
+                        <Grid>
+                            <Label
+                                Text="✓"
+                                FontSize="46"
+                                FontAttributes="Bold"
+                                TextColor="#138754"
+                                HorizontalTextAlignment="Center"
+                                VerticalTextAlignment="Center" />
+                        </Grid>
+                    </Border>
+
+                    <!-- Title -->
+                    <VerticalStackLayout Spacing="4">
+                        <Label
+                            Text="Belajar Hari Ini"
+                            FontSize="38"
+                            FontAttributes="Bold"
+                            TextColor="#0F6B43"
+                            HorizontalTextAlignment="Center" />
+
+                        <Label
+                            Text="Lolos CPNS Impian!"
+                            FontSize="34"
+                            FontAttributes="Bold"
+                            TextColor="#138754"
+                            HorizontalTextAlignment="Center" />
+                    </VerticalStackLayout>
+
+                    <!-- Subtitle -->
+                    <Label
+                        Text="Latihan soal, simulasi, dan review pembahasan dalam satu aplikasi."
+                        FontSize="15"
+                        LineHeight="1.25"
+                        TextColor="#4B7D66"
+                        HorizontalTextAlignment="Center"
+                        MaximumWidthRequest="300" />
+
+                    <!-- Loading Indicator Area -->
+                    <VerticalStackLayout
+                        Spacing="10"
+                        Margin="0,12,0,0"
+                        HorizontalOptions="Center">
+
+                        <ActivityIndicator
+                            IsRunning="True"
+                            Color="#138754"
+                            WidthRequest="32"
+                            HeightRequest="32" />
+
+                        <Label
+                            Text="Menyiapkan aplikasi..."
+                            FontSize="13"
+                            TextColor="#5D8A75"
+                            HorizontalTextAlignment="Center" />
+                    </VerticalStackLayout>
+
+                </VerticalStackLayout>
+
+            </Grid>
+
+        </Border>
+
+    </Grid>
+
+</ContentPage>

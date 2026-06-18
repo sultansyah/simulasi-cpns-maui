@@ -4,11 +4,19 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:SimulasiCPNS"
+    xmlns:views="clr-namespace:SimulasiCPNS.Views"
     Title="SimulasiCPNS">
 
     <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+        Route="splash"
+        ContentTemplate="{DataTemplate views:SplashPage}" />
+
+    <ShellContent
+        Route="onboarding"
+        ContentTemplate="{DataTemplate views:OnboardingPage}" />
+
+    <ShellContent
+        Route="home"
+        ContentTemplate="{DataTemplate views:HomePage}" />
 
 </Shell>

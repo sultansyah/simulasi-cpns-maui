@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SimulasiCPNS.Views.OnboardingPage"
+             Title="OnboardingPage">
+    <ScrollView>
+        <VerticalStackLayout Padding="24" Spacing="20">
+
+            <Label
+                Text="Selamat datang 👋"
+                FontSize="28"
+                FontAttributes="Bold"
+                TextColor="#0F172A" />
+
+            <Label
+                Text="Kita setup sedikit dulu sebelum mulai latihan."
+                FontSize="15"
+                TextColor="#64748B" />
+
+            <Label
+                Text="Nama lengkap"
+                FontAttributes="Bold"
+                TextColor="#0F172A" />
+
+            <Entry
+                x:Name="FullNameEntry"
+                Placeholder="Contoh: Muhammad Sultansyah" />
+
+            <HorizontalStackLayout Spacing="12">
+                <Switch x:Name="ReminderSwitch" />
+                <Label
+                    Text="Aktifkan reminder belajar"
+                    VerticalOptions="Center"
+                    TextColor="#0F172A" />
+            </HorizontalStackLayout>
+
+            <Label
+                Text="Jam reminder"
+                FontAttributes="Bold"
+                TextColor="#0F172A" />
+
+            <TimePicker
+                x:Name="ReminderTimePicker"
+                Time="20:00:00" />
+
+            <Button
+                Text="Mulai Belajar"
+                BackgroundColor="#10B981"
+                TextColor="White"
+                CornerRadius="16"
+                HeightRequest="52"
+                Clicked="OnStartClicked" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
