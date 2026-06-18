@@ -23,6 +23,7 @@ public partial class SplashPage : ContentPage
 		if (setting is null || string.IsNullOrWhiteSpace(setting.FullName))
 		{
 			await Shell.Current.GoToAsync("//onboarding");
+			return;
 		}
 
 		await Shell.Current.GoToAsync("//home");
