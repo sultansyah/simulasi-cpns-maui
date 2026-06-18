@@ -5,7 +5,8 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:SimulasiCPNS"
     xmlns:views="clr-namespace:SimulasiCPNS.Views"
-    Title="SimulasiCPNS">
+    Title="SimulasiCPNS"
+    FlyoutBehavior="Disabled">
 
     <ShellContent
         Route="splash"
