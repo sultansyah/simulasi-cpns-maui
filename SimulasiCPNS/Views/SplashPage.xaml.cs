@@ -17,14 +17,14 @@ public partial class SplashPage : ContentPage
 	{
 		base.OnAppearing();
 
-		//await Task.Delay(1000);
+		await Task.Delay(1000);
 
-		//var setting = await _settingService.GetSettingAsync();
-		//if(setting is null || string.IsNullOrWhiteSpace(setting.FullName))
-		//{
-		//	await Shell.Current.GoToAsync("//onboarding");
-		//}
+		var setting = await _settingService.GetSettingAsync();
+		if (setting is null || string.IsNullOrWhiteSpace(setting.FullName))
+		{
+			await Shell.Current.GoToAsync("//onboarding");
+		}
 
-  //      await Shell.Current.GoToAsync("//home");
-    }
+		await Shell.Current.GoToAsync("//home");
+	}
 }
