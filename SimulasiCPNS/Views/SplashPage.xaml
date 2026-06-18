@@ -157,7 +157,7 @@
 
                     <!-- Subtitle -->
                     <Label
-                        Text="Latihan soal, simulasi, dan review pembahasan dalam satu aplikasi."
+                        Text="Latihan soal, dan review pembahasan dalam satu aplikasi."
                         FontSize="15"
                         LineHeight="1.25"
                         TextColor="#4B7D66"
