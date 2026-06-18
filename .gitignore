@@ -1,0 +1,39 @@
+# Build output
+[Bb]in/
+[Oo]bj/
+
+# Visual Studio / VS Code / Rider
+.vs/
+.vscode/
+.idea/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# .NET / NuGet
+*.rsuser
+packages/
+TestResults/
+artifacts/
+
+# Platform packaging / signing artifacts
+*.apk
+*.aab
+*.apks
+*.ipa
+*.appx
+*.appxbundle
+*.msix
+*.msixbundle
+*.keystore
+*.pfx
+*.snk
+
+# Logs and diagnostics
+*.log
+*.cache
+
+# OS files
+.DS_Store
+Thumbs.db
