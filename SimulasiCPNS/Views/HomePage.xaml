@@ -1,79 +1,437 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="SimulasiCPNS.Views.HomePage"
-             Title="HomePage">
-    <ScrollView>
-        <VerticalStackLayout Padding="24" Spacing="20">
+<ContentPage
+    x:Class="SimulasiCPNS.Views.HomePage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    NavigationPage.HasNavigationBar="False"
+    Shell.NavBarIsVisible="False"
+    
+    BackgroundColor="#FFFFFF">
 
-            <Label
-                x:Name="GreetingLabel"
-                Text="Halo 👋"
-                FontSize="26"
-                FontAttributes="Bold"
-                TextColor="#0F172A" />
+    <Grid RowDefinitions="Auto,*">
 
-            <Frame
-                BackgroundColor="#D1FAE5"
-                CornerRadius="20"
-                BorderColor="Transparent"
-                Padding="20">
+        <!-- Header Green Background -->
+        <Grid
+            Grid.Row="0"
+            HeightRequest="260"
+            Padding="24,48,24,0">
 
-                <VerticalStackLayout Spacing="8">
+            <Grid.Background>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="#10B981" Offset="0.0" />
+                    <GradientStop Color="#047857" Offset="1.0" />
+                </LinearGradientBrush>
+            </Grid.Background>
+
+            <Grid RowDefinitions="Auto,Auto" ColumnDefinitions="*,Auto">
+
+                <VerticalStackLayout Spacing="6">
                     <Label
-                        Text="Progress Singkat"
-                        FontSize="16"
+                        x:Name="GreetingLabel"
+                        Text="Halo, Sultan! 👋"
+                        FontSize="26"
                         FontAttributes="Bold"
-                        TextColor="#047857" />
+                        TextColor="White" />
 
                     <Label
-                        Text="Belum ada latihan. Mulai kerjakan soal pertamamu."
-                        FontSize="14"
-                        TextColor="#065F46" />
+                        Text="Semangat belajar hari ini!"
+                        FontSize="15"
+                        FontAttributes="Bold"
+                        TextColor="#E8FFF5" />
                 </VerticalStackLayout>
-            </Frame>
 
-            <Button
-                Text="Practice"
-                BackgroundColor="#10B981"
-                TextColor="White"
-                CornerRadius="16"
-                HeightRequest="52" />
+                <Grid
+                    Grid.Column="1"
+                    WidthRequest="46"
+                    HeightRequest="46"
+                    VerticalOptions="Start">
 
-            <Button
-                Text="Simulation"
-                BackgroundColor="#F59E0B"
-                TextColor="White"
-                CornerRadius="16"
-                HeightRequest="52" />
+                    <Label
+                        Text="🔥"
+                        FontSize="28"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center" />
+                </Grid>
 
-            <Button
-                Text="Bookmark"
-                BackgroundColor="White"
-                TextColor="#0F172A"
-                BorderColor="#CBD5E1"
-                BorderWidth="1"
-                CornerRadius="16"
-                HeightRequest="52" />
+            </Grid>
+        </Grid>
 
-            <Button
-                Text="Progress"
-                BackgroundColor="White"
-                TextColor="#0F172A"
-                BorderColor="#CBD5E1"
-                BorderWidth="1"
-                CornerRadius="16"
-                HeightRequest="52" />
+        <!-- Content -->
+        <ScrollView Grid.Row="1" Margin="0,-105,0,0">
+            <VerticalStackLayout
+                Padding="24,0,24,28"
+                Spacing="16">
 
-            <Button
-                Text="Setting"
-                BackgroundColor="White"
-                TextColor="#0F172A"
-                BorderColor="#CBD5E1"
-                BorderWidth="1"
-                CornerRadius="16"
-                HeightRequest="52" />
+                <!-- Progress Card -->
+                <Border
+                    BackgroundColor="#F8FFFC"
+                    StrokeThickness="0"
+                    StrokeShape="RoundRectangle 22"
+                    Padding="22,18">
 
-        </VerticalStackLayout>
-    </ScrollView>
+                    <Border.Shadow>
+                        <Shadow
+                            Brush="#000000"
+                            Opacity="0.14"
+                            Radius="12"
+                            Offset="0,4" />
+                    </Border.Shadow>
+
+                    <VerticalStackLayout Spacing="14">
+
+                        <Label
+                            Text="Progress Kamu"
+                            FontSize="16"
+                            FontAttributes="Bold"
+                            TextColor="#111827" />
+
+                        <Grid ColumnDefinitions="Auto,*" ColumnSpacing="26">
+
+                            <!-- Fake Circular Progress UI -->
+                            <Grid
+                                WidthRequest="122"
+                                HeightRequest="108">
+
+                                <Ellipse
+                                    WidthRequest="92"
+                                    HeightRequest="92"
+                                    Stroke="#D1FAE5"
+                                    StrokeThickness="8"
+                                    Fill="Transparent"
+                                    HorizontalOptions="Center"
+                                    VerticalOptions="Center" />
+
+                                <Ellipse
+                                    WidthRequest="92"
+                                    HeightRequest="92"
+                                    Stroke="#059669"
+                                    StrokeThickness="8"
+                                    Fill="Transparent"
+                                    HorizontalOptions="Center"
+                                    VerticalOptions="Center" />
+
+                                <Border
+                                    WidthRequest="72"
+                                    HeightRequest="72"
+                                    StrokeThickness="0"
+                                    BackgroundColor="#F8FFFC"
+                                    StrokeShape="RoundRectangle 36"
+                                    HorizontalOptions="Center"
+                                    VerticalOptions="Center">
+
+                                    <VerticalStackLayout
+                                        Spacing="0"
+                                        HorizontalOptions="Center"
+                                        VerticalOptions="Center">
+
+                                        <Label
+                                            Text="72%"
+                                            FontSize="24"
+                                            FontAttributes="Bold"
+                                            TextColor="#111827"
+                                            HorizontalTextAlignment="Center" />
+
+                                        <Label
+                                            Text="Overall"
+                                            FontSize="11"
+                                            TextColor="#374151"
+                                            HorizontalTextAlignment="Center" />
+                                    </VerticalStackLayout>
+                                </Border>
+                            </Grid>
+
+                            <VerticalStackLayout
+                                Grid.Column="1"
+                                Spacing="14"
+                                VerticalOptions="Center">
+
+                                <VerticalStackLayout Spacing="2">
+                                    <Label
+                                        Text="Total Dikerjakan"
+                                        FontSize="13"
+                                        TextColor="#374151" />
+
+                                    <Label
+                                        Text="120"
+                                        FontSize="22"
+                                        FontAttributes="Bold"
+                                        TextColor="#047857" />
+                                </VerticalStackLayout>
+
+                                <VerticalStackLayout Spacing="2">
+                                    <Label
+                                        Text="Rata-rata Skor"
+                                        FontSize="13"
+                                        TextColor="#374151" />
+
+                                    <Label
+                                        Text="78,4"
+                                        FontSize="22"
+                                        FontAttributes="Bold"
+                                        TextColor="#047857" />
+                                </VerticalStackLayout>
+
+                            </VerticalStackLayout>
+                        </Grid>
+                    </VerticalStackLayout>
+                </Border>
+
+                <!-- Continue Learning -->
+                <Label
+                    Text="Lanjutkan Belajar"
+                    FontSize="18"
+                    FontAttributes="Bold"
+                    TextColor="#111827"
+                    Margin="0,2,0,0" />
+
+                <Border
+                    HeightRequest="74"
+                    BackgroundColor="White"
+                    Stroke="#E5E7EB"
+                    StrokeThickness="1"
+                    StrokeShape="RoundRectangle 16"
+                    Padding="14,0">
+
+                    <Border.Shadow>
+                        <Shadow
+                            Brush="#000000"
+                            Opacity="0.10"
+                            Radius="8"
+                            Offset="0,3" />
+                    </Border.Shadow>
+
+                    <Grid ColumnDefinitions="Auto,*,Auto" ColumnSpacing="14">
+
+                        <Border
+                            WidthRequest="38"
+                            HeightRequest="38"
+                            BackgroundColor="#ECFDF5"
+                            StrokeThickness="0"
+                            StrokeShape="RoundRectangle 10"
+                            VerticalOptions="Center">
+
+                            <Label
+                                Text="📊"
+                                FontSize="22"
+                                HorizontalTextAlignment="Center"
+                                VerticalTextAlignment="Center" />
+                        </Border>
+
+                        <VerticalStackLayout
+                            Grid.Column="1"
+                            Spacing="2"
+                            VerticalOptions="Center">
+
+                            <Label
+                                Text="TIU - Numerik"
+                                FontSize="16"
+                                FontAttributes="Bold"
+                                TextColor="#111827" />
+
+                            <Label
+                                Text="Materi terakhir"
+                                FontSize="13"
+                                TextColor="#6B7280" />
+                        </VerticalStackLayout>
+
+                        <Label
+                            Grid.Column="2"
+                            Text="›"
+                            FontSize="34"
+                            TextColor="#374151"
+                            VerticalOptions="Center" />
+                    </Grid>
+                </Border>
+
+                <!-- Continue Learning -->
+                <Label
+                    Text="Kategori"
+                    FontSize="18"
+                    FontAttributes="Bold"
+                    TextColor="#111827"
+                    Margin="0,2,0,0" />
+
+                <!-- Menu Grid -->
+                <Grid
+                    ColumnDefinitions="*,*,*"
+                    RowDefinitions="Auto,Auto"
+                    ColumnSpacing="14"
+                    RowSpacing="14">
+
+                    <!-- Practice -->
+                    <Border
+                        Grid.Row="0"
+                        Grid.Column="0"
+                        HeightRequest="106"
+                        BackgroundColor="White"
+                        Stroke="#E5E7EB"
+                        StrokeThickness="1"
+                        StrokeShape="RoundRectangle 16"
+                        Padding="8">
+
+                        <Border.Shadow>
+                            <Shadow Brush="#000000" Opacity="0.10" Radius="8" Offset="0,3" />
+                        </Border.Shadow>
+
+                        <VerticalStackLayout
+                            Spacing="8"
+                            HorizontalOptions="Center"
+                            VerticalOptions="Center">
+
+                            <Label
+                                Text="📖"
+                                FontSize="34"
+                                HorizontalTextAlignment="Center" />
+
+                            <Label
+                                Text="Practice"
+                                FontSize="13"
+                                FontAttributes="Bold"
+                                TextColor="#111827"
+                                HorizontalTextAlignment="Center" />
+                        </VerticalStackLayout>
+                    </Border>
+
+                    <!-- Simulation -->
+                    <Border
+                        Grid.Row="0"
+                        Grid.Column="1"
+                        HeightRequest="106"
+                        BackgroundColor="White"
+                        Stroke="#E5E7EB"
+                        StrokeThickness="1"
+                        StrokeShape="RoundRectangle 16"
+                        Padding="8">
+
+                        <Border.Shadow>
+                            <Shadow Brush="#000000" Opacity="0.10" Radius="8" Offset="0,3" />
+                        </Border.Shadow>
+
+                        <VerticalStackLayout
+                            Spacing="8"
+                            HorizontalOptions="Center"
+                            VerticalOptions="Center">
+
+                            <Label
+                                Text="⏱️"
+                                FontSize="34"
+                                HorizontalTextAlignment="Center" />
+
+                            <Label
+                                Text="Simulation"
+                                FontSize="13"
+                                FontAttributes="Bold"
+                                TextColor="#111827"
+                                HorizontalTextAlignment="Center" />
+                        </VerticalStackLayout>
+                    </Border>
+
+                    <!-- Bookmark -->
+                    <Border
+                        Grid.Row="0"
+                        Grid.Column="2"
+                        HeightRequest="106"
+                        BackgroundColor="White"
+                        Stroke="#E5E7EB"
+                        StrokeThickness="1"
+                        StrokeShape="RoundRectangle 16"
+                        Padding="8">
+
+                        <Border.Shadow>
+                            <Shadow Brush="#000000" Opacity="0.10" Radius="8" Offset="0,3" />
+                        </Border.Shadow>
+
+                        <VerticalStackLayout
+                            Spacing="8"
+                            HorizontalOptions="Center"
+                            VerticalOptions="Center">
+
+                            <Label
+                                Text="🔖"
+                                FontSize="34"
+                                HorizontalTextAlignment="Center" />
+
+                            <Label
+                                Text="Bookmark"
+                                FontSize="13"
+                                FontAttributes="Bold"
+                                TextColor="#111827"
+                                HorizontalTextAlignment="Center" />
+                        </VerticalStackLayout>
+                    </Border>
+
+                    <!-- Progress -->
+                    <Border
+                        Grid.Row="1"
+                        Grid.Column="0"
+                        HeightRequest="106"
+                        BackgroundColor="White"
+                        Stroke="#E5E7EB"
+                        StrokeThickness="1"
+                        StrokeShape="RoundRectangle 16"
+                        Padding="8">
+
+                        <Border.Shadow>
+                            <Shadow Brush="#000000" Opacity="0.10" Radius="8" Offset="0,3" />
+                        </Border.Shadow>
+
+                        <VerticalStackLayout
+                            Spacing="8"
+                            HorizontalOptions="Center"
+                            VerticalOptions="Center">
+
+                            <Label
+                                Text="📈"
+                                FontSize="34"
+                                HorizontalTextAlignment="Center" />
+
+                            <Label
+                                Text="Progress"
+                                FontSize="13"
+                                FontAttributes="Bold"
+                                TextColor="#111827"
+                                HorizontalTextAlignment="Center" />
+                        </VerticalStackLayout>
+                    </Border>
+
+                    <!-- Setting -->
+                    <Border
+                        Grid.Row="1"
+                        Grid.Column="1"
+                        HeightRequest="106"
+                        BackgroundColor="White"
+                        Stroke="#E5E7EB"
+                        StrokeThickness="1"
+                        StrokeShape="RoundRectangle 16"
+                        Padding="8">
+
+                        <Border.Shadow>
+                            <Shadow Brush="#000000" Opacity="0.10" Radius="8" Offset="0,3" />
+                        </Border.Shadow>
+
+                        <VerticalStackLayout
+                            Spacing="8"
+                            HorizontalOptions="Center"
+                            VerticalOptions="Center">
+
+                            <Label
+                                Text="⚙️"
+                                FontSize="34"
+                                HorizontalTextAlignment="Center" />
+
+                            <Label
+                                Text="Setting"
+                                FontSize="13"
+                                FontAttributes="Bold"
+                                TextColor="#111827"
+                                HorizontalTextAlignment="Center" />
+                        </VerticalStackLayout>
+                    </Border>
+
+                </Grid>
+
+            </VerticalStackLayout>
+        </ScrollView>
+
+    </Grid>
 </ContentPage>

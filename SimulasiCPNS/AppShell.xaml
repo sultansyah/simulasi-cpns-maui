@@ -3,21 +3,60 @@
     x:Class="SimulasiCPNS.AppShell"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:local="clr-namespace:SimulasiCPNS"
     xmlns:views="clr-namespace:SimulasiCPNS.Views"
     Title="SimulasiCPNS"
-    FlyoutBehavior="Disabled">
+    FlyoutBehavior="Disabled"
+    Shell.NavBarIsVisible="False"
+    Shell.TabBarBackgroundColor="White"
+    Shell.TabBarTitleColor="#059669"
+    Shell.TabBarForegroundColor="#059669"
+    Shell.TabBarUnselectedColor="#6B7280">
 
+    <!-- Page awal -->
     <ShellContent
         Route="splash"
+        Shell.TabBarIsVisible="False"
         ContentTemplate="{DataTemplate views:SplashPage}" />
 
+    <!-- Page onboarding -->
     <ShellContent
         Route="onboarding"
+        Shell.TabBarIsVisible="False"
         ContentTemplate="{DataTemplate views:OnboardingPage}" />
 
-    <ShellContent
-        Route="home"
-        ContentTemplate="{DataTemplate views:HomePage}" />
+    <!-- Main app -->
+    <TabBar Route="main">
+
+        <ShellContent
+            Title="Home"
+            Route="home"
+            Icon="icon_home.svg"
+            ContentTemplate="{DataTemplate views:HomePage}" />
+
+        <ShellContent
+            Title="Kategori"
+            Route="practice"
+            Icon="icon_category.svg"
+            ContentTemplate="{DataTemplate views:HomePage}" />
+
+        <ShellContent
+            Title="Bookmark"
+            Route="bookmark"
+            Icon="icon_bookmark.svg"
+            ContentTemplate="{DataTemplate views:HomePage}" />
+
+        <ShellContent
+            Title="Progress"
+            Route="progress"
+            Icon="icon_progress.svg"
+            ContentTemplate="{DataTemplate views:HomePage}" />
+
+        <ShellContent
+            Title="Akun"
+            Route="setting"
+            Icon="icon_account.svg"
+            ContentTemplate="{DataTemplate views:HomePage}" />
+
+    </TabBar>
 
 </Shell>
