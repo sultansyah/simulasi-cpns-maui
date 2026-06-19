@@ -11,7 +11,9 @@ namespace SimulasiCPNS.Models
         public int Id { get; set; }
 
         public string Category { get; set; } = "";
+        public string CategoryIcon { get; set; } = "";
         public string SubCategory{ get; set; } = "";
+        public string SubCategoryIcon { get; set; } = "";
         public string Difficulty { get; set; } = "";
         public string QuestionText { get; set; } = "";
 

@@ -30,6 +30,14 @@ public partial class HomePage : ContentPage
         var categories = await _questionService.GetCategoriesAsync();
         CategoryCollectionView.ItemsSource = categories;
 
+        var featuredQuestion = await _questionService.GetFeaturedQuestionAsync();
+        if (featuredQuestion is not null)
+        {
+            FeaturedCategoryIconLabel.Text = featuredQuestion.CategoryIcon;
+            FeaturedCategoryLabel.Text = featuredQuestion.Category;
+            FeaturedSubCategoryLabel.Text = $"{featuredQuestion.SubCategoryIcon} {featuredQuestion.SubCategory}";
+        }
+
         StartMascotAnimation();
     }
 

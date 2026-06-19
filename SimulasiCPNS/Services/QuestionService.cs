@@ -1,7 +1,4 @@
-﻿using SimulasiCPNS.Models;
-using System;
-using System.Collections.Generic;
-using System.Text;
+using SimulasiCPNS.Models;
 
 namespace SimulasiCPNS.Services
 {
@@ -15,14 +12,32 @@ namespace SimulasiCPNS.Services
             return await database.Table<Question>().ToListAsync();
         }
 
-        public async Task<List<string>> GetCategoriesAsync()
+        public async Task<List<CategoryDisplayItem>> GetCategoriesAsync()
         {
             var questions = await GetQuestionsAsync();
             return questions
-                    .Select(q => q.Category)
-                    .Where(c => !string.IsNullOrWhiteSpace(c))
-                    .Distinct()
-                    .ToList();
+                .Where(q => !string.IsNullOrWhiteSpace(q.Category))
+                .GroupBy(q => q.Category)
+                .Select(group =>
+                {
+                    var firstQuestion = group.First();
+
+                    return new CategoryDisplayItem
+                    {
+                        Category = firstQuestion.Category,
+                        CategoryIcon = firstQuestion.CategoryIcon,
+                        SubCategory = firstQuestion.SubCategory,
+                        SubCategoryIcon = firstQuestion.SubCategoryIcon,
+                        Difficulty = firstQuestion.Difficulty
+                    };
+                })
+                .ToList();
+        }
+
+        public async Task<Question?> GetFeaturedQuestionAsync()
+        {
+            var questions = await GetQuestionsAsync();
+            return questions.FirstOrDefault();
         }
     }
 }
