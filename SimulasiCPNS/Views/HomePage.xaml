@@ -5,458 +5,582 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     NavigationPage.HasNavigationBar="False"
     Shell.NavBarIsVisible="False"
-    BackgroundColor="#FFFFFF">
+    BackgroundColor="#FFF8F8">
 
     <Grid RowDefinitions="Auto,*">
 
-        <!-- Header Motivational Background -->
         <Grid
             Grid.Row="0"
-            HeightRequest="260"
-            Padding="24,48,24,0">
+            MinimumHeightRequest="280"
+            Padding="24,42,24,0">
 
             <Grid.Background>
-                <LinearGradientBrush StartPoint="1,1" EndPoint="0,0">
-                    <GradientStop Color="#FB7185" Offset="0.0" />
-                    <GradientStop Color="#BE123C" Offset="1.0" />
+                <LinearGradientBrush StartPoint="0,0"
+                                     EndPoint="1,1">
+                    <GradientStop Color="#BE123C"
+                                  Offset="0.58"/>
+                    <GradientStop Color="#881337"
+                                  Offset="1.0"/>
                 </LinearGradientBrush>
             </Grid.Background>
 
-            <Grid
-                RowDefinitions="Auto,Auto"
-                ColumnDefinitions="*,Auto">
+            <Ellipse
+                WidthRequest="184"
+                HeightRequest="184"
+                Fill="#FFFFFF"
+                Opacity="0.10"
+                HorizontalOptions="Start"
+                VerticalOptions="Start"
+                Margin="-64,-34,0,0"/>
 
-                <VerticalStackLayout Spacing="6">
+            <Ellipse
+                WidthRequest="220"
+                HeightRequest="220"
+                Fill="#FDA4AF"
+                Opacity="0.16"
+                HorizontalOptions="End"
+                VerticalOptions="Center"
+                Margin="0,10,-72,0"/>
+
+            <Grid ColumnDefinitions="*,Auto">
+
+                <VerticalStackLayout
+                    x:Name="HeroContent"
+                    Spacing="10"
+                    VerticalOptions="Start">
+
                     <Label
                         x:Name="GreetingLabel"
                         Text="Halo, Sultan! 👋"
-                        FontSize="26"
+                        FontSize="28"
                         FontAttributes="Bold"
-                        TextColor="White" />
+                        TextColor="White"
+                        MaxLines="2"
+                        LineBreakMode="WordWrap"/>
 
                     <Label
-                        Text="Semangat belajar hari ini!"
-                        FontSize="15"
-                        FontAttributes="Bold"
-                        TextColor="#FFF1F2" />
+                        Text="Tetap konsisten. Satu sesi yang selesai hari ini lebih berarti daripada rencana panjang yang ditunda."
+                        FontSize="14"
+                        LineHeight="1.2"
+                        TextColor="#FFE4E6"
+                        MaxLines="4"
+                        LineBreakMode="WordWrap"/>
+
                 </VerticalStackLayout>
 
                 <Grid
                     Grid.Column="1"
                     x:Name="MascotContainer"
-                    WidthRequest="110"
-                    HeightRequest="110"
-                    VerticalOptions="Start"
-                    Margin="0,-10,0,0">
+                    WidthRequest="126"
+                    HeightRequest="126"
+                    Margin="8,8,0,0"
+                    HorizontalOptions="End"
+                    VerticalOptions="Start">
+
+                    <Border
+                        WidthRequest="108"
+                        HeightRequest="108"
+                        BackgroundColor="#FFFFFF"
+                        Opacity="0.12"
+                        StrokeThickness="0"
+                        StrokeShape="RoundRectangle 34"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"/>
 
                     <Image
                         Source="maskot_cpns.svg"
-                        WidthRequest="150"
-                        HeightRequest="150"
+                        WidthRequest="132"
+                        HeightRequest="132"
                         Aspect="AspectFit"
                         HorizontalOptions="Center"
-                        VerticalOptions="Center" />
+                        VerticalOptions="Center"/>
                 </Grid>
-
             </Grid>
         </Grid>
 
-        <!-- Content -->
         <ScrollView
             Grid.Row="1"
-            Margin="0,-105,0,0">
+            Margin="0,-88,0,0">
 
             <VerticalStackLayout
-                Padding="24,0,24,28"
-                Spacing="16">
+                Padding="22,0,22,30"
+                Spacing="18">
 
-                <!-- Progress Card -->
-                <Border
-                    BackgroundColor="#FFF1F2"
-                    StrokeThickness="0"
-                    StrokeShape="RoundRectangle 22"
-                    Padding="22,18">
+                <Grid
+                    ColumnDefinitions="*,*"
+                    ColumnSpacing="10">
 
-                    <Border.Shadow>
-                        <Shadow
-                            Brush="#000000"
-                            Opacity="0.14"
-                            Radius="12"
-                            Offset="0,4" />
-                    </Border.Shadow>
+                        <Border
+                            BackgroundColor="#FFFFFF"
+                            Stroke="#FCE7F3"
+                            StrokeThickness="1"
+                            StrokeShape="RoundRectangle 999"
+                            Padding="14,8">
 
-                    <VerticalStackLayout Spacing="14">
+                        <HorizontalStackLayout Spacing="8">
+                            <Image
+                                Source="icon_streak_status.svg"
+                                WidthRequest="22"
+                                HeightRequest="22"
+                                Aspect="AspectFit"
+                                VerticalOptions="Center"/>
+                            <Label
+                                Text="Streak 4 hari"
+                                FontSize="12"
+                                FontAttributes="Bold"
+                                TextColor="#9F1239"
+                                VerticalTextAlignment="Center"/>
+                        </HorizontalStackLayout>
+                    </Border>
 
-                        <Label
-                            Text="Progress Kamu"
-                            FontSize="16"
-                            FontAttributes="Bold"
-                            TextColor="#111827" />
+                        <Border
+                            Grid.Column="1"
+                            BackgroundColor="#FFFFFF"
+                            Stroke="#FCE7F3"
+                            StrokeThickness="1"
+                            StrokeShape="RoundRectangle 999"
+                            Padding="14,8">
 
-                        <Grid
-                            ColumnDefinitions="Auto,*"
-                            ColumnSpacing="26">
-
-                            <!-- Fake Circular Progress UI -->
-                            <Grid
-                                WidthRequest="122"
-                                HeightRequest="108">
-
-                                <Ellipse
-                                    WidthRequest="92"
-                                    HeightRequest="92"
-                                    Stroke="#FECDD3"
-                                    StrokeThickness="8"
-                                    Fill="Transparent"
-                                    HorizontalOptions="Center"
-                                    VerticalOptions="Center" />
-
-                                <Ellipse
-                                    WidthRequest="92"
-                                    HeightRequest="92"
-                                    Stroke="#E11D48"
-                                    StrokeThickness="8"
-                                    Fill="Transparent"
-                                    HorizontalOptions="Center"
-                                    VerticalOptions="Center" />
-
-                                <Border
-                                    WidthRequest="72"
-                                    HeightRequest="72"
-                                    StrokeThickness="0"
-                                    BackgroundColor="#FFF1F2"
-                                    StrokeShape="RoundRectangle 36"
-                                    HorizontalOptions="Center"
-                                    VerticalOptions="Center">
-
-                                    <VerticalStackLayout
-                                        Spacing="0"
-                                        HorizontalOptions="Center"
-                                        VerticalOptions="Center">
-
-                                        <Label
-                                            Text="72%"
-                                            FontSize="24"
-                                            FontAttributes="Bold"
-                                            TextColor="#111827"
-                                            HorizontalTextAlignment="Center" />
-
-                                        <Label
-                                            Text="Overall"
-                                            FontSize="11"
-                                            TextColor="#374151"
-                                            HorizontalTextAlignment="Center" />
-
-                                    </VerticalStackLayout>
-                                </Border>
-                            </Grid>
-
-                            <VerticalStackLayout
-                                Grid.Column="1"
-                                Spacing="14"
-                                VerticalOptions="Center">
-
-                                <VerticalStackLayout Spacing="2">
-                                    <Label
-                                        Text="Total Dikerjakan"
-                                        FontSize="13"
-                                        TextColor="#374151" />
-
-                                    <Label
-                                        Text="120"
-                                        FontSize="22"
-                                        FontAttributes="Bold"
-                                        TextColor="#BE123C" />
-                                </VerticalStackLayout>
-
-                                <VerticalStackLayout Spacing="2">
-                                    <Label
-                                        Text="Rata-rata Skor"
-                                        FontSize="13"
-                                        TextColor="#374151" />
-
-                                    <Label
-                                        Text="78,4"
-                                        FontSize="22"
-                                        FontAttributes="Bold"
-                                        TextColor="#BE123C" />
-                                </VerticalStackLayout>
-
-                            </VerticalStackLayout>
-                        </Grid>
-                    </VerticalStackLayout>
-                </Border>
-
-                <!-- Continue Learning -->
-                <Label
-                    Text="Lanjutkan Belajar"
-                    FontSize="18"
-                    FontAttributes="Bold"
-                    TextColor="#111827"
-                    Margin="0,2,0,0" />
+                        <HorizontalStackLayout Spacing="8">
+                            <Image
+                                Source="icon_target_status.svg"
+                                WidthRequest="22"
+                                HeightRequest="22"
+                                Aspect="AspectFit"
+                                VerticalOptions="Center"/>
+                            <Label
+                                Text="Target 14/20 Harian"
+                                FontSize="12"
+                                FontAttributes="Bold"
+                                TextColor="#9F1239"
+                                VerticalTextAlignment="Center"/>
+                        </HorizontalStackLayout>
+                    </Border>
+                </Grid>
 
                 <Border
-                    HeightRequest="74"
-                    BackgroundColor="White"
-                    Stroke="#E5E7EB"
+                    x:Name="ContinueCard"
+                    MinimumHeightRequest="106"
+                    BackgroundColor="#FFFFFF"
+                    Stroke="#FBCFE8"
                     StrokeThickness="1"
-                    StrokeShape="RoundRectangle 16"
-                    Padding="14,0">
+                    StrokeShape="RoundRectangle 24"
+                    Padding="16,14">
 
                     <Border.Shadow>
                         <Shadow
-                            Brush="#000000"
-                            Opacity="0.10"
-                            Radius="8"
-                            Offset="0,3" />
+                            Brush="#4C0519"
+                            Opacity="0.12"
+                            Radius="14"
+                            Offset="0,6"/>
                     </Border.Shadow>
 
                     <Grid
                         ColumnDefinitions="Auto,*,Auto"
                         ColumnSpacing="14">
 
-                        <Border
-                            WidthRequest="38"
-                            HeightRequest="38"
-                            BackgroundColor="#FFE4E6"
-                            StrokeThickness="0"
-                            StrokeShape="RoundRectangle 10"
+                        <Grid
+                            WidthRequest="52"
+                            HeightRequest="52"
                             VerticalOptions="Center">
 
-                            <Label
-                                x:Name="FeaturedCategoryIconLabel"
-                                Text="📊"
-                                FontSize="22"
-                                HorizontalTextAlignment="Center"
-                                VerticalTextAlignment="Center" />
-                        </Border>
-
-                        <VerticalStackLayout
-                            Grid.Column="1"
-                            Spacing="2"
-                            VerticalOptions="Center">
-
-                            <Label
-                                x:Name="FeaturedCategoryLabel"
-                                Text="TIU - Numerik"
-                                FontSize="16"
-                                FontAttributes="Bold"
-                                TextColor="#111827" />
-
-                            <Label
-                                x:Name="FeaturedSubCategoryLabel"
-                                Text="Materi terakhir"
-                                FontSize="13"
-                                TextColor="#6B7280" />
-
-                        </VerticalStackLayout>
-
-                        <Label
-                            Grid.Column="2"
-                            Text="›"
-                            FontSize="34"
-                            TextColor="#374151"
-                            VerticalOptions="Center" />
-
-                    </Grid>
-                </Border>
-
-                <!-- Mode -->
-                <Label
-                    Text="Pilih mode yang anda mau"
-                    FontSize="18"
-                    FontAttributes="Bold"
-                    TextColor="#111827"
-                    Margin="0,2,0,0" />
-
-                <Grid
-                    ColumnDefinitions="*,*"
-                    ColumnSpacing="14">
-
-                    <!-- Card Practice -->
-                    <Border
-                        Grid.Column="0"
-                        HeightRequest="138"
-                        BackgroundColor="White"
-                        Stroke="#E5E7EB"
-                        StrokeThickness="1"
-                        StrokeShape="RoundRectangle 18"
-                        Padding="14">
-
-                        <Border.Shadow>
-                            <Shadow
-                                Brush="#000000"
-                                Opacity="0.08"
-                                Radius="8"
-                                Offset="0,3" />
-                        </Border.Shadow>
-
-                        <VerticalStackLayout
-                            Spacing="7"
-                            HorizontalOptions="Center"
-                            VerticalOptions="Center">
+                            <Border
+                                BackgroundColor="#FFE4E6"
+                                StrokeThickness="0"
+                                StrokeShape="RoundRectangle 18"/>
 
                             <Border
                                 WidthRequest="44"
                                 HeightRequest="44"
                                 BackgroundColor="#FFF1F2"
                                 StrokeThickness="0"
-                                StrokeShape="RoundRectangle 14">
+                                StrokeShape="RoundRectangle 15"
+                                HorizontalOptions="Center"
+                                VerticalOptions="Center">
 
                                 <Label
-                                    Text="📖"
-                                    FontSize="25"
+                                    x:Name="FeaturedCategoryIconLabel"
+                                    Text="📊"
+                                    FontSize="24"
                                     HorizontalTextAlignment="Center"
-                                    VerticalTextAlignment="Center" />
+                                    VerticalTextAlignment="Center"/>
+                            </Border>
+                        </Grid>
+
+                        <VerticalStackLayout
+                            Grid.Column="1"
+                            Spacing="4"
+                            VerticalOptions="Center">
+
+                            <Label
+                                Text="Lanjutkan materi"
+                                FontSize="11"
+                                TextColor="#9CA3AF"/>
+
+                            <Label
+                                x:Name="FeaturedCategoryLabel"
+                                Text="TIU"
+                                FontSize="18"
+                                FontAttributes="Bold"
+                                TextColor="#111827"/>
+
+                            <Label
+                                x:Name="FeaturedSubCategoryLabel"
+                                Text="🔢 Numerik"
+                                FontSize="13"
+                                TextColor="#6B7280"/>
+                        </VerticalStackLayout>
+
+                        <Border
+                            Grid.Column="2"
+                            BackgroundColor="#FDF2F8"
+                            StrokeThickness="0"
+                            StrokeShape="RoundRectangle 999"
+                            Padding="18,12"
+                            VerticalOptions="Center">
+
+                            <Label
+                                Text="Lanjutkan"
+                                FontSize="15"
+                                FontAttributes="Bold"
+                                TextColor="#BE123C"/>
+                        </Border>
+                    </Grid>
+                </Border>
+
+                <Border
+                    x:Name="ProgressCard"
+                    BackgroundColor="#FFF4F6"
+                    Stroke="#FFE4E6"
+                    StrokeThickness="1"
+                    StrokeShape="RoundRectangle 24"
+                    Padding="18,14,18,12">
+
+                    <Border.Shadow>
+                        <Shadow
+                            Brush="#4C0519"
+                            Opacity="0.08"
+                            Radius="12"
+                            Offset="0,4"/>
+                    </Border.Shadow>
+
+                    <VerticalStackLayout Spacing="12">
+                        <Grid ColumnDefinitions="Auto,*,*"
+                              ColumnSpacing="14">
+                            <VerticalStackLayout
+                                Spacing="6"
+                                HorizontalOptions="Center"
+                                VerticalOptions="Center">
+                                <Grid
+                                    WidthRequest="92"
+                                    HeightRequest="92"
+                                    HorizontalOptions="Center">
+
+                                    <Ellipse
+                                        WidthRequest="82"
+                                        HeightRequest="82"
+                                        Fill="#FFFFFF"
+                                        HorizontalOptions="Center"
+                                        VerticalOptions="Center"/>
+
+                                    <Ellipse
+                                        WidthRequest="72"
+                                        HeightRequest="72"
+                                        Stroke="#FED7E2"
+                                        StrokeThickness="8"
+                                        Fill="Transparent"
+                                        HorizontalOptions="Center"
+                                        VerticalOptions="Center"/>
+
+                                    <Ellipse
+                                        x:Name="ProgressRing"
+                                        WidthRequest="72"
+                                        HeightRequest="72"
+                                        Stroke="#E11D48"
+                                        StrokeThickness="8"
+                                        Fill="Transparent"
+                                        HorizontalOptions="Center"
+                                        VerticalOptions="Center"/>
+
+                                    <Label
+                                        x:Name="ProgressPercentLabel"
+                                        Text="72%"
+                                        FontSize="18"
+                                        FontAttributes="Bold"
+                                        TextColor="#111827"
+                                        HorizontalTextAlignment="Center"
+                                        VerticalTextAlignment="Center"/>
+                                </Grid>
+
+                                <Label
+                                    Text="Target Mingguan"
+                                    FontSize="11"
+                                    FontAttributes="Bold"
+                                    TextColor="#6B7280"
+                                    HorizontalTextAlignment="Center"/>
+                            </VerticalStackLayout>
+
+                            <Border
+                                Grid.Column="1"
+                                BackgroundColor="#FFFFFF"
+                                Stroke="#FCE7F3"
+                                StrokeThickness="1"
+                                StrokeShape="RoundRectangle 18"
+                                Padding="14,12">
+
+                                <VerticalStackLayout Spacing="3"
+                                                     VerticalOptions="Center">
+                                    <Label
+                                        Text="Total Dikerjakan"
+                                        FontSize="11"
+                                        TextColor="#111827"/>
+                                    <Label
+                                        Text="120 soal"
+                                        FontSize="18"
+                                        FontAttributes="Bold"
+                                        TextColor="#BE123C"/>
+                                </VerticalStackLayout>
+                            </Border>
+
+                            <Border
+                                Grid.Column="2"
+                                BackgroundColor="#FFFFFF"
+                                Stroke="#FCE7F3"
+                                StrokeThickness="1"
+                                StrokeShape="RoundRectangle 18"
+                                Padding="14,12">
+
+                                <VerticalStackLayout Spacing="3"
+                                                     VerticalOptions="Center">
+                                    <Label
+                                        Text="Rata-rata Skor"
+                                        FontSize="11"
+                                        TextColor="#111827"/>
+                                    <Label
+                                        Text="78,4"
+                                        FontSize="18"
+                                        FontAttributes="Bold"
+                                        TextColor="#BE123C"/>
+                                </VerticalStackLayout>
+                            </Border>
+                        </Grid>
+
+                    </VerticalStackLayout>
+                </Border>
+
+                <HorizontalStackLayout
+                    Spacing="6"
+                    VerticalOptions="Center">
+                    <Label
+                        Text="Ayo Belajar Sekarang"
+                        FontSize="18"
+                        FontAttributes="Bold"
+                        TextColor="#111827"
+                        VerticalTextAlignment="Center"/>
+                    <Label
+                        Text="(tekan salah satu)"
+                        FontSize="14"
+                        TextColor="{StaticResource Primary}"
+                        VerticalTextAlignment="Center"/>
+                </HorizontalStackLayout>
+
+                <Grid
+                    ColumnDefinitions="*,*"
+                    ColumnSpacing="12">
+
+                    <Border
+                        x:Name="PracticeCard"
+                        Grid.Column="0"
+                        MinimumHeightRequest="168"
+                        BackgroundColor="#FFF7F9"
+                        Stroke="#FBCFE8"
+                        StrokeThickness="1"
+                        StrokeShape="RoundRectangle 22"
+                        Padding="16">
+
+                        <Border.Shadow>
+                            <Shadow
+                                Brush="#881337"
+                                Opacity="0.10"
+                                Radius="12"
+                                Offset="0,4"/>
+                        </Border.Shadow>
+
+                        <VerticalStackLayout
+                            Spacing="10"
+                            HorizontalOptions="Center"
+                            VerticalOptions="Center">
+                            <Border
+                                WidthRequest="64"
+                                HeightRequest="64"
+                                BackgroundColor="#FFF1F2"
+                                StrokeThickness="0"
+                                StrokeShape="RoundRectangle 20"
+                                HorizontalOptions="Center">
+                                <Image
+                                    Source="icon_practice_mode.svg"
+                                    WidthRequest="48"
+                                    HeightRequest="48"
+                                    Aspect="AspectFit"
+                                    HorizontalOptions="Center"
+                                    VerticalOptions="Center"/>
                             </Border>
 
                             <Label
                                 Text="Practice"
-                                FontSize="14"
+                                FontSize="16"
                                 FontAttributes="Bold"
                                 TextColor="#111827"
-                                HorizontalTextAlignment="Center" />
+                                HorizontalTextAlignment="Center"/>
 
                             <Label
-                                Text="Belajar santai per kategori"
-                                FontSize="11"
-                                TextColor="#6B7280"
+                                Text="Belajar santai tanpa timer"
+                                FontSize="12"
+                                TextColor="#9F1239"
                                 HorizontalTextAlignment="Center"
-                                LineBreakMode="WordWrap" />
-
+                                LineBreakMode="WordWrap"/>
                         </VerticalStackLayout>
                     </Border>
 
-                    <!-- Card Simulation -->
                     <Border
+                        x:Name="SimulationCard"
                         Grid.Column="1"
-                        HeightRequest="138"
-                        BackgroundColor="White"
-                        Stroke="#E5E7EB"
+                        MinimumHeightRequest="168"
+                        BackgroundColor="#FFF7ED"
+                        Stroke="#FED7AA"
                         StrokeThickness="1"
-                        StrokeShape="RoundRectangle 18"
-                        Padding="14">
+                        StrokeShape="RoundRectangle 22"
+                        Padding="16">
 
                         <Border.Shadow>
                             <Shadow
-                                Brush="#000000"
-                                Opacity="0.08"
-                                Radius="8"
-                                Offset="0,3" />
+                                Brush="#7C2D12"
+                                Opacity="0.10"
+                                Radius="12"
+                                Offset="0,4"/>
                         </Border.Shadow>
 
                         <VerticalStackLayout
-                            Spacing="7"
+                            Spacing="10"
                             HorizontalOptions="Center"
                             VerticalOptions="Center">
-
                             <Border
-                                WidthRequest="44"
-                                HeightRequest="44"
-                                BackgroundColor="#FFF1F2"
+                                WidthRequest="64"
+                                HeightRequest="64"
+                                BackgroundColor="#FFEDD5"
                                 StrokeThickness="0"
-                                StrokeShape="RoundRectangle 14">
-
-                                <Label
-                                    Text="📝"
-                                    FontSize="25"
-                                    HorizontalTextAlignment="Center"
-                                    VerticalTextAlignment="Center" />
+                                StrokeShape="RoundRectangle 20"
+                                HorizontalOptions="Center">
+                                <Image
+                                    Source="icon_simulation_mode.svg"
+                                    WidthRequest="48"
+                                    HeightRequest="48"
+                                    Aspect="AspectFit"
+                                    HorizontalOptions="Center"
+                                    VerticalOptions="Center"/>
                             </Border>
 
                             <Label
                                 Text="Simulation"
-                                FontSize="14"
+                                FontSize="16"
                                 FontAttributes="Bold"
                                 TextColor="#111827"
-                                HorizontalTextAlignment="Center" />
+                                HorizontalTextAlignment="Center"/>
 
                             <Label
-                                Text="Ujian dengan timer dan skor"
-                                FontSize="11"
-                                TextColor="#6B7280"
+                                Text="Paket ujian tetap dengan timer"
+                                FontSize="12"
+                                TextColor="#9A3412"
                                 HorizontalTextAlignment="Center"
-                                LineBreakMode="WordWrap" />
-
+                                LineBreakMode="WordWrap"/>
                         </VerticalStackLayout>
                     </Border>
-
                 </Grid>
 
-                <!-- Categories -->
                 <Label
                     Text="Kategori"
                     FontSize="18"
                     FontAttributes="Bold"
                     TextColor="#111827"
-                    Margin="0,2,0,0" />
+                    Margin="0,4,0,0"/>
 
                 <CollectionView x:Name="CategoryCollectionView">
                     <CollectionView.ItemsLayout>
                         <GridItemsLayout
                             Orientation="Vertical"
-                            Span="3"
+                            Span="2"
                             HorizontalItemSpacing="10"
-                            VerticalItemSpacing="10" />
+                            VerticalItemSpacing="10"/>
                     </CollectionView.ItemsLayout>
 
                     <CollectionView.ItemTemplate>
                         <DataTemplate>
                             <Border
-                                HeightRequest="124"
-                                BackgroundColor="White"
-                                Stroke="#E5E7EB"
+                                BackgroundColor="#FFFFFF"
+                                Stroke="#F3E8FF"
                                 StrokeThickness="1"
-                                StrokeShape="RoundRectangle 16"
-                                Padding="10">
+                                StrokeShape="RoundRectangle 18"
+                                Padding="12"
+                                MinimumHeightRequest="122">
 
-                                <Grid>
+                                <Border.Shadow>
+                                    <Shadow
+                                        Brush="#111827"
+                                        Opacity="0.05"
+                                        Radius="8"
+                                        Offset="0,3"/>
+                                </Border.Shadow>
 
-                                    <!-- Difficulty di ujung kiri atas -->
+                                <VerticalStackLayout
+                                    Spacing="8"
+                                    HorizontalOptions="Center"
+                                    VerticalOptions="Center">
+
                                     <Border
-                                        HorizontalOptions="Start"
-                                        VerticalOptions="Start"
-                                        BackgroundColor="#ECFDF5"
+                                        WidthRequest="46"
+                                        HeightRequest="46"
+                                        BackgroundColor="#FFF1F2"
                                         StrokeThickness="0"
-                                        StrokeShape="RoundRectangle 999"
-                                        Padding="8,3">
-
-                                        <Label
-                                            Text="{Binding Difficulty}"
-                                            FontSize="10"
-                                            FontAttributes="Bold"
-                                            TextColor="#059669" />
-                                    </Border>
-
-                                    <!-- Content utama -->
-                                    <VerticalStackLayout
-                                        Spacing="6"
-                                        Margin="0,24,0,0"
-                                        HorizontalOptions="Center"
-                                        VerticalOptions="Center">
-
+                                        StrokeShape="RoundRectangle 16">
                                         <Label
                                             Text="{Binding CategoryIcon}"
-                                            FontSize="30"
-                                            HorizontalTextAlignment="Center" />
+                                            FontSize="24"
+                                            HorizontalTextAlignment="Center"
+                                            VerticalTextAlignment="Center"/>
+                                    </Border>
 
+                                    <Label
+                                        Text="{Binding Category}"
+                                        FontSize="14"
+                                        FontAttributes="Bold"
+                                        TextColor="#111827"
+                                        HorizontalTextAlignment="Center"
+                                        MaxLines="2"
+                                        LineBreakMode="WordWrap"/>
+
+                                    <HorizontalStackLayout
+                                        Spacing="4"
+                                        HorizontalOptions="Center">
                                         <Label
-                                            Text="{Binding Category}"
-                                            FontSize="13"
-                                            FontAttributes="Bold"
-                                            TextColor="#111827"
-                                            HorizontalTextAlignment="Center" />
-
-                                    </VerticalStackLayout>
-
-                                </Grid>
+                                            Text="{Binding SubCategoryIcon}"
+                                            FontSize="11"
+                                            TextColor="#6B7280"
+                                            VerticalTextAlignment="Center"/>
+                                        <Label
+                                            Text="{Binding SubCategory}"
+                                            FontSize="11"
+                                            TextColor="#6B7280"
+                                            HorizontalTextAlignment="Center"
+                                            MaxLines="2"
+                                            LineBreakMode="TailTruncation"
+                                            VerticalTextAlignment="Center"/>
+                                    </HorizontalStackLayout>
+                                </VerticalStackLayout>
                             </Border>
                         </DataTemplate>
                     </CollectionView.ItemTemplate>
                 </CollectionView>
-
             </VerticalStackLayout>
         </ScrollView>
-
     </Grid>
 </ContentPage>
