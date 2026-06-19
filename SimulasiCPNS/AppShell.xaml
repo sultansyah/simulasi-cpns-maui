@@ -51,9 +51,9 @@
             ContentTemplate="{DataTemplate views:HomePage}" />
 
         <ShellContent
-            Title="Akun"
+            Title="Setting"
             Route="setting"
-            Icon="icon_account.svg"
+            Icon="icon_setting.svg"
             ContentTemplate="{DataTemplate views:HomePage}" />
 
     </TabBar>

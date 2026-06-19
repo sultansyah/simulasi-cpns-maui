@@ -17,7 +17,7 @@
             Padding="24,48,24,0">
 
             <Grid.Background>
-                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                <LinearGradientBrush StartPoint="1,1" EndPoint="0,0">
                     <GradientStop Color="#FB7185" Offset="0.0" />
                     <GradientStop Color="#BE123C" Offset="1.0" />
                 </LinearGradientBrush>
