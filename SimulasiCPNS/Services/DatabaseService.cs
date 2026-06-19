@@ -18,6 +18,9 @@ namespace SimulasiCPNS.Services
 
             await _database.CreateTableAsync<Question>();
             await _database.CreateTableAsync<Setting>();
+            await _database.CreateTableAsync<QuizSession>();
+            await _database.CreateTableAsync<QuizAnswer>();
+            await _database.CreateTableAsync<BookmarkedQuestion>();
 
             return _database;
         }
