@@ -99,12 +99,6 @@ public partial class HomePage : ContentPage
         ContinueCard.Scale = 0.97;
         ContinueCard.TranslationY = 18;
 
-        PracticeCard.Opacity = 0;
-        PracticeCard.TranslationY = 20;
-
-        SimulationCard.Opacity = 0;
-        SimulationCard.TranslationY = 24;
-
         ProgressPercentLabel.Scale = 0.92;
 
         await Task.WhenAll(
@@ -121,12 +115,6 @@ public partial class HomePage : ContentPage
             ContinueCard.FadeTo(1, 250, Easing.CubicOut),
             ContinueCard.ScaleTo(1, 250, Easing.CubicOut),
             ContinueCard.TranslateTo(0, 0, 250, Easing.CubicOut));
-
-        await Task.WhenAll(
-            PracticeCard.FadeTo(1, 220, Easing.CubicOut),
-            PracticeCard.TranslateTo(0, 0, 220, Easing.CubicOut),
-            SimulationCard.FadeTo(1, 280, Easing.CubicOut),
-            SimulationCard.TranslateTo(0, 0, 280, Easing.CubicOut));
 
         await ProgressPercentLabel.ScaleTo(1, 260, Easing.CubicOut);
 
