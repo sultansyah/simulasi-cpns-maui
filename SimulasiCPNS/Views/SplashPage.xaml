@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="SimulasiCPNS.Views.SplashPage"
+    Shell.NavBarIsVisible="False"
+    NavigationPage.HasNavigationBar="False"
+    BackgroundColor="#FFFFFF">
+
+    <Grid
+        Padding="28">
+
+        <Grid.Background>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                <GradientStop Color="#FFFFFF" Offset="0.0" />
+                <GradientStop Color="#FFF1F2" Offset="0.62" />
+                <GradientStop Color="#FFE4E6" Offset="1.0" />
+            </LinearGradientBrush>
+        </Grid.Background>
+
+        <Ellipse
+            WidthRequest="220"
+            HeightRequest="220"
+            Fill="#FFE4E6"
+            Opacity="0.60"
+            HorizontalOptions="Start"
+            VerticalOptions="Start"
+            Margin="-84,-60,0,0" />
+
+        <Ellipse
+            WidthRequest="240"
+            HeightRequest="240"
+            Fill="#FFF1F2"
+            Opacity="0.85"
+            HorizontalOptions="End"
+            VerticalOptions="End"
+            Margin="0,0,-90,-90" />
+
+        <VerticalStackLayout
+            Spacing="18"
+            HorizontalOptions="Center"
+            VerticalOptions="Center">
+
+            <Border
+                WidthRequest="148"
+                HeightRequest="148"
+                StrokeThickness="0"
+                BackgroundColor="#FFFFFF"
+                StrokeShape="RoundRectangle 34"
+                Padding="12">
+
+                <Border.Shadow>
+                    <Shadow
+                        Brush="#4C0519"
+                        Opacity="0.10"
+                        Radius="18"
+                        Offset="0,8" />
+                </Border.Shadow>
+
+                <Image
+                    Source="maskot_cpns.svg"
+                    Aspect="AspectFit"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center" />
+            </Border>
+
+            <VerticalStackLayout
+                Spacing="6"
+                HorizontalOptions="Center">
+
+                <Label
+                    Text="Simulasi CPNS"
+                    FontSize="28"
+                    FontAttributes="Bold"
+                    TextColor="#111827"
+                    HorizontalTextAlignment="Center" />
+
+                <Label
+                    Text="Belajar CPNS lebih santai"
+                    FontSize="15"
+                    FontAttributes="Bold"
+                    TextColor="#BE123C"
+                    HorizontalTextAlignment="Center" />
+            </VerticalStackLayout>
+
+            <Border
+                BackgroundColor="#FFFFFF"
+                Stroke="#FFE4E6"
+                StrokeThickness="1"
+                StrokeShape="RoundRectangle 18"
+                Padding="16,10">
+
+                <HorizontalStackLayout
+                    Spacing="10"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center">
+
+                    <ActivityIndicator
+                        IsRunning="True"
+                        Color="#E11D48"
+                        WidthRequest="18"
+                        HeightRequest="18"
+                        HorizontalOptions="Center" />
+
+                    <Label
+                        Text="Menyiapkan aplikasi..."
+                        FontSize="13"
+                        FontAttributes="Bold"
+                        TextColor="#374151"
+                        VerticalTextAlignment="Center" />
+
+                </HorizontalStackLayout>
+            </Border>
+
+        </VerticalStackLayout>
+
+    </Grid>
+</ContentPage>

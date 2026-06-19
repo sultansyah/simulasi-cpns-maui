@@ -14,6 +14,11 @@
 
     <!-- Page onboarding -->
     <ShellContent
+        Route="splash"
+        Shell.TabBarIsVisible="False"
+        ContentTemplate="{DataTemplate views:SplashPage}" />
+    
+    <ShellContent
         Route="onboarding"
         Shell.TabBarIsVisible="False"
         ContentTemplate="{DataTemplate views:OnboardingPage}" />

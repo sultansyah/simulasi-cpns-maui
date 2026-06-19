@@ -21,6 +21,7 @@ namespace SimulasiCPNS
             builder.Services.AddSingleton<SettingService>();
             builder.Services.AddSingleton<AppShell>();
 
+            builder.Services.AddTransient<SplashPage>();
             builder.Services.AddTransient<OnboardingPage>();
             builder.Services.AddTransient<HomePage>();
 
