@@ -4,6 +4,7 @@ namespace SimulasiCPNS.Models
     {
         public string Category { get; set; } = "";
         public string CategoryIcon { get; set; } = "";
+        public string Description { get; set; } = "";
         public string SubCategory { get; set; } = "";
         public string SubCategoryIcon { get; set; } = "";
         public string Difficulty { get; set; } = "";

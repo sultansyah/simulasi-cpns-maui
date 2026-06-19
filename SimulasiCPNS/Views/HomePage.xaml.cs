@@ -28,9 +28,6 @@ public partial class HomePage : ContentPage
             GreetingLabel.Text = $"Halo, {setting.FullName}! 👋";
         }
 
-        var categories = await _questionService.GetCategoriesAsync();
-        CategoryCollectionView.ItemsSource = categories;
-
         var featuredQuestion = await _questionService.GetFeaturedQuestionAsync();
         if (featuredQuestion is not null)
         {

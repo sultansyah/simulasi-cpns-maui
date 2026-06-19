@@ -101,4 +101,16 @@
 	  </MauiXaml>
 	</ItemGroup>
 
+	<ItemGroup>
+	  <None Update="Views\BookmarkPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </None>
+	  <None Update="Views\ReportPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </None>
+	  <None Update="Views\SettingPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </None>
+	</ItemGroup>
+
 </Project>

@@ -2,11 +2,184 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="SimulasiCPNS.Views.CategoryPage"
-             Title="CategoryPage">
-    <VerticalStackLayout>
-        <Label 
-            Text="Kategori"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+             NavigationPage.HasNavigationBar="False"
+             Shell.NavBarIsVisible="False"
+             BackgroundColor="#FFF8F8">
+    <ScrollView>
+        <VerticalStackLayout
+            x:Name="PageContent"
+            Padding="22,28,22,30"
+            Spacing="24">
+
+        <Grid
+            x:Name="ModeSection"
+            ColumnDefinitions="*,*"
+            ColumnSpacing="12">
+
+            <Border
+                x:Name="PracticeModeCard"
+                Grid.Column="0"
+                BackgroundColor="{StaticResource Primary}"
+                StrokeThickness="0"
+                StrokeShape="RoundRectangle 20"
+                Padding="16,14">
+
+                <Border.Shadow>
+                    <Shadow
+                        Brush="#881337"
+                        Opacity="0.18"
+                        Radius="14"
+                        Offset="0,5"/>
+                </Border.Shadow>
+
+                <VerticalStackLayout Spacing="4">
+                    <Label
+                        Text="Practice"
+                        FontSize="18"
+                        FontAttributes="Bold"
+                        TextColor="White"/>
+                    <Label
+                        Text="Belajar tanpa timer"
+                        FontSize="13"
+                        TextColor="#FFE4E6"/>
+                </VerticalStackLayout>
+            </Border>
+
+            <Border
+                x:Name="SimulationModeCard"
+                Grid.Column="1"
+                BackgroundColor="White"
+                Stroke="#FBCFD4"
+                StrokeThickness="1"
+                StrokeShape="RoundRectangle 20"
+                Padding="16,14">
+
+                <Border.Shadow>
+                    <Shadow
+                        Brush="#4C0519"
+                        Opacity="0.08"
+                        Radius="12"
+                        Offset="0,4"/>
+                </Border.Shadow>
+
+                <VerticalStackLayout Spacing="4">
+                    <Label
+                        Text="Simulation"
+                        FontSize="18"
+                        FontAttributes="Bold"
+                        TextColor="#1F2937"/>
+                    <Label
+                        Text="Ujian dengan timer"
+                        FontSize="13"
+                        TextColor="#6B7280"/>
+                </VerticalStackLayout>
+            </Border>
+        </Grid>
+
+        <VerticalStackLayout
+            x:Name="HeadingSection"
+            Spacing="4">
+            <Label
+                Text="Pilih Kategori"
+                FontSize="24"
+                FontAttributes="Bold"
+                TextColor="#1F2937"/>
+            <Label
+                Text="Pilih kategori yang ingin kamu pelajari."
+                FontSize="14"
+                TextColor="#6B7280"/>
+        </VerticalStackLayout>
+
+        <Border
+            x:Name="CategoryCard"
+            BackgroundColor="White"
+            Stroke="#FBCFD4"
+            StrokeThickness="1"
+            StrokeShape="RoundRectangle 24"
+            Padding="0">
+
+            <Border.Shadow>
+                <Shadow
+                    Brush="#4C0519"
+                    Opacity="0.09"
+                    Radius="12"
+                    Offset="0,4"/>
+            </Border.Shadow>
+
+            <VerticalStackLayout
+                x:Name="CategoryListLayout"
+                Spacing="0"
+                BindableLayout.ItemsSource="{Binding}">
+                <BindableLayout.ItemTemplate>
+                    <DataTemplate>
+                        <Grid
+                            RowDefinitions="Auto,1">
+
+                            <Grid
+                                Grid.Row="0"
+                                ColumnDefinitions="Auto,*,Auto"
+                                ColumnSpacing="14"
+                                Padding="16,15">
+
+                                <Grid
+                                    WidthRequest="42"
+                                    HeightRequest="42"
+                                    VerticalOptions="Center">
+
+                                    <Border
+                                        BackgroundColor="#FFE4E6"
+                                        StrokeThickness="0"
+                                        StrokeShape="RoundRectangle 14"/>
+
+                                    <Border
+                                        WidthRequest="34"
+                                        HeightRequest="34"
+                                        BackgroundColor="{StaticResource Primary}"
+                                        StrokeThickness="0"
+                                        StrokeShape="RoundRectangle 11"
+                                        HorizontalOptions="Center"
+                                        VerticalOptions="Center">
+                                        <Label
+                                            Text="{Binding CategoryIcon}"
+                                            FontSize="16"
+                                            HorizontalTextAlignment="Center"
+                                            VerticalTextAlignment="Center"/>
+                                    </Border>
+                                </Grid>
+
+                                <VerticalStackLayout
+                                    Grid.Column="1"
+                                    Spacing="3"
+                                    VerticalOptions="Center">
+                                    <Label
+                                        Text="{Binding Category}"
+                                        FontSize="18"
+                                        FontAttributes="Bold"
+                                        TextColor="#1F2937"/>
+                                    <Label
+                                        Text="{Binding Description}"
+                                        FontSize="13"
+                                        TextColor="#6B7280"/>
+                                </VerticalStackLayout>
+
+                                <Label
+                                    Grid.Column="2"
+                                    Text="›"
+                                    FontSize="26"
+                                    TextColor="#6B7280"
+                                    VerticalTextAlignment="Center"/>
+                            </Grid>
+
+                            <BoxView
+                                Grid.Row="1"
+                                Margin="16,0"
+                                HeightRequest="1"
+                                BackgroundColor="#FCE7EA"/>
+                        </Grid>
+                    </DataTemplate>
+                </BindableLayout.ItemTemplate>
+            </VerticalStackLayout>
+        </Border>
+        </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>

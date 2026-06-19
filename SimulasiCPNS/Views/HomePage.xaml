@@ -170,9 +170,9 @@
                     <Border.Shadow>
                         <Shadow
                             Brush="#4C0519"
-                            Opacity="0.12"
-                            Radius="14"
-                            Offset="0,6"/>
+                            Opacity="0.08"
+                            Radius="10"
+                            Offset="0,3"/>
                     </Border.Shadow>
 
                     <Grid
@@ -259,9 +259,9 @@
                     <Border.Shadow>
                         <Shadow
                             Brush="#4C0519"
-                            Opacity="0.08"
-                            Radius="12"
-                            Offset="0,4"/>
+                            Opacity="0.06"
+                            Radius="8"
+                            Offset="0,2"/>
                     </Border.Shadow>
 
                     <VerticalStackLayout Spacing="12">
@@ -401,9 +401,9 @@
                         <Border.Shadow>
                             <Shadow
                                 Brush="#881337"
-                                Opacity="0.10"
-                                Radius="12"
-                                Offset="0,4"/>
+                                Opacity="0.07"
+                                Radius="8"
+                                Offset="0,2"/>
                         </Border.Shadow>
 
                         <VerticalStackLayout
@@ -455,9 +455,9 @@
                         <Border.Shadow>
                             <Shadow
                                 Brush="#7C2D12"
-                                Opacity="0.10"
-                                Radius="12"
-                                Offset="0,4"/>
+                                Opacity="0.07"
+                                Radius="8"
+                                Offset="0,2"/>
                         </Border.Shadow>
 
                         <VerticalStackLayout
@@ -496,90 +496,6 @@
                         </VerticalStackLayout>
                     </Border>
                 </Grid>
-
-                <Label
-                    Text="Kategori"
-                    FontSize="18"
-                    FontAttributes="Bold"
-                    TextColor="#111827"
-                    Margin="0,4,0,0"/>
-
-                <CollectionView x:Name="CategoryCollectionView">
-                    <CollectionView.ItemsLayout>
-                        <GridItemsLayout
-                            Orientation="Vertical"
-                            Span="2"
-                            HorizontalItemSpacing="10"
-                            VerticalItemSpacing="10"/>
-                    </CollectionView.ItemsLayout>
-
-                    <CollectionView.ItemTemplate>
-                        <DataTemplate>
-                            <Border
-                                BackgroundColor="#FFFFFF"
-                                Stroke="#F3E8FF"
-                                StrokeThickness="1"
-                                StrokeShape="RoundRectangle 18"
-                                Padding="12"
-                                MinimumHeightRequest="122">
-
-                                <Border.Shadow>
-                                    <Shadow
-                                        Brush="#111827"
-                                        Opacity="0.05"
-                                        Radius="8"
-                                        Offset="0,3"/>
-                                </Border.Shadow>
-
-                                <VerticalStackLayout
-                                    Spacing="8"
-                                    HorizontalOptions="Center"
-                                    VerticalOptions="Center">
-
-                                    <Border
-                                        WidthRequest="46"
-                                        HeightRequest="46"
-                                        BackgroundColor="#FFF1F2"
-                                        StrokeThickness="0"
-                                        StrokeShape="RoundRectangle 16">
-                                        <Label
-                                            Text="{Binding CategoryIcon}"
-                                            FontSize="24"
-                                            HorizontalTextAlignment="Center"
-                                            VerticalTextAlignment="Center"/>
-                                    </Border>
-
-                                    <Label
-                                        Text="{Binding Category}"
-                                        FontSize="14"
-                                        FontAttributes="Bold"
-                                        TextColor="#111827"
-                                        HorizontalTextAlignment="Center"
-                                        MaxLines="2"
-                                        LineBreakMode="WordWrap"/>
-
-                                    <HorizontalStackLayout
-                                        Spacing="4"
-                                        HorizontalOptions="Center">
-                                        <Label
-                                            Text="{Binding SubCategoryIcon}"
-                                            FontSize="11"
-                                            TextColor="#6B7280"
-                                            VerticalTextAlignment="Center"/>
-                                        <Label
-                                            Text="{Binding SubCategory}"
-                                            FontSize="11"
-                                            TextColor="#6B7280"
-                                            HorizontalTextAlignment="Center"
-                                            MaxLines="2"
-                                            LineBreakMode="TailTruncation"
-                                            VerticalTextAlignment="Center"/>
-                                    </HorizontalStackLayout>
-                                </VerticalStackLayout>
-                            </Border>
-                        </DataTemplate>
-                    </CollectionView.ItemTemplate>
-                </CollectionView>
             </VerticalStackLayout>
         </ScrollView>
     </Grid>
