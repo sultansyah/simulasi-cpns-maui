@@ -25,9 +25,13 @@ namespace SimulasiCPNS
             builder.Services.AddTransient<SplashPage>();
             builder.Services.AddTransient<OnboardingPage>();
             builder.Services.AddTransient<HomePage>();
+            builder.Services.AddTransient<CategoryPage>();
+            builder.Services.AddTransient<BookmarkPage>();
+            builder.Services.AddTransient<ReportPage>();
+            builder.Services.AddTransient<SettingPage>();
 
 #if DEBUG
-    		builder.Logging.AddDebug();
+            builder.Logging.AddDebug();
 #endif
 
             return builder.Build();

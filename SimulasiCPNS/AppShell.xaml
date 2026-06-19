@@ -36,25 +36,25 @@
             Title="Kategori"
             Route="practice"
             Icon="icon_category.svg"
-            ContentTemplate="{DataTemplate views:HomePage}" />
+            ContentTemplate="{DataTemplate views:CategoryPage}" />
 
         <ShellContent
             Title="Bookmark"
             Route="bookmark"
             Icon="icon_bookmark.svg"
-            ContentTemplate="{DataTemplate views:HomePage}" />
+            ContentTemplate="{DataTemplate views:BookmarkPage}" />
 
         <ShellContent
-            Title="Progress"
-            Route="progress"
-            Icon="icon_progress.svg"
-            ContentTemplate="{DataTemplate views:HomePage}" />
+            Title="Report"
+            Route="report"
+            Icon="icon_report.svg"
+            ContentTemplate="{DataTemplate views:ReportPage}" />
 
         <ShellContent
             Title="Setting"
             Route="setting"
             Icon="icon_setting.svg"
-            ContentTemplate="{DataTemplate views:HomePage}" />
+            ContentTemplate="{DataTemplate views:SettingPage}" />
 
     </TabBar>
 
