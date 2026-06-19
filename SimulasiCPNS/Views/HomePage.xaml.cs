@@ -5,13 +5,15 @@ namespace SimulasiCPNS.Views;
 public partial class HomePage : ContentPage
 {
 	private readonly SettingService _settingService;
+    private readonly QuestionService _questionService;
     private bool _isMascotAnimationRunning;
 
-	public HomePage(SettingService settingService)
+	public HomePage(SettingService settingService, QuestionService questionService)
 	{
 		InitializeComponent();
 
 		_settingService = settingService;
+        _questionService = questionService;
 	}
 
 	protected override async void OnAppearing()
@@ -25,8 +27,11 @@ public partial class HomePage : ContentPage
 			GreetingLabel.Text = $"Halo, {setting.FullName}";
 		}
 
+        var categories = await _questionService.GetCategoriesAsync();
+        CategoryCollectionView.ItemsSource = categories;
+
         StartMascotAnimation();
-	}
+    }
 
     protected override void OnDisappearing()
     {

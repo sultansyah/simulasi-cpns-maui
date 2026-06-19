@@ -1,8 +1,6 @@
 ﻿using SimulasiCPNS.Models;
 using SQLite;
-using System;
-using System.Collections.Generic;
-using System.Text;
+using System.Text.Json;
 
 namespace SimulasiCPNS.Services
 {
@@ -22,6 +20,32 @@ namespace SimulasiCPNS.Services
             await _database.CreateTableAsync<Setting>();
 
             return _database;
+        }
+
+        public async Task SeedQuestionsAsync()
+        {
+            var database = await GetDatabaseAsync();
+
+            var count = await database.Table<Question>().CountAsync();
+            if (count > 0) return;
+
+            using var stream = await FileSystem.OpenAppPackageFileAsync("questions.json");
+            using var reader = new StreamReader(stream);
+            var json = await reader.ReadToEndAsync();
+
+            var questions = JsonSerializer.Deserialize<List<Question>>(json, new JsonSerializerOptions
+            {
+                PropertyNameCaseInsensitive = true
+            });
+
+            if (questions is null || questions.Count == 0) return;
+
+            foreach (var question in questions)
+            {
+                question.CreatedAt = DateTime.Now;
+            }
+
+            await database.InsertAllAsync(questions);
         }
     }
 }

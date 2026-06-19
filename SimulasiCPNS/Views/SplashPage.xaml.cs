@@ -5,20 +5,26 @@ namespace SimulasiCPNS.Views;
 public partial class SplashPage : ContentPage
 {
 	private readonly SettingService _settingService;
-	private bool _hasNavigated;
+    private readonly DatabaseService _databaseService;
+    private bool _hasNavigated;
 
-	public SplashPage(SettingService settingService)
+	public SplashPage(SettingService settingService, DatabaseService databaseService)
 	{
 		InitializeComponent();
 
 		_settingService = settingService;
-	}
+        _databaseService = databaseService;
+
+    }
 
 	protected override async void OnAppearing()
 	{
 		base.OnAppearing();
 
-		if (_hasNavigated) return;
+		// seeding
+		await _databaseService.SeedQuestionsAsync();
+
+        if (_hasNavigated) return;
 
 		_hasNavigated = true;
 
