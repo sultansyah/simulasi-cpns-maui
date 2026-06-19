@@ -15,8 +15,8 @@
                 Spacing="2"
                 VerticalOptions="Center">
                 <Label
-                    Text="Tekan salah satu"
-                    FontSize="18"
+                    Text="Pilih Mode"
+                    FontSize="24"
                     FontAttributes="Bold"
                     TextColor="{StaticResource Primary}"
                     VerticalTextAlignment="Center"/>
@@ -36,6 +36,10 @@
                     StrokeShape="RoundRectangle 22"
                     Padding="16">
 
+                    <Border.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnPracticeTapped" />
+                    </Border.GestureRecognizers>
+
                     <Border.Shadow>
                         <Shadow
                             Brush="#881337"
@@ -44,40 +48,63 @@
                             Offset="0,2"/>
                     </Border.Shadow>
 
-                    <VerticalStackLayout
-                        Spacing="10"
-                        HorizontalOptions="Center"
-                        VerticalOptions="Center">
+                    <Grid>
                         <Border
-                            WidthRequest="64"
-                            HeightRequest="64"
-                            BackgroundColor="#FFF1F2"
+                            x:Name="PracticeCheckBadge"
+                            WidthRequest="28"
+                            HeightRequest="28"
+                            BackgroundColor="White"
                             StrokeThickness="0"
-                            StrokeShape="RoundRectangle 20"
-                            HorizontalOptions="Center">
-                            <Image
-                                Source="icon_practice_mode.svg"
-                                WidthRequest="48"
-                                HeightRequest="48"
-                                Aspect="AspectFit"
-                                HorizontalOptions="Center"
-                                VerticalOptions="Center"/>
+                            StrokeShape="RoundRectangle 999"
+                            HorizontalOptions="End"
+                            VerticalOptions="Start"
+                            IsVisible="False">
+                            <Label
+                                Text="✓"
+                                FontSize="14"
+                                FontAttributes="Bold"
+                                TextColor="{StaticResource Primary}"
+                                HorizontalTextAlignment="Center"
+                                VerticalTextAlignment="Center"/>
                         </Border>
 
-                        <Label
-                            Text="Practice"
-                            FontSize="16"
-                            FontAttributes="Bold"
-                            TextColor="#111827"
-                            HorizontalTextAlignment="Center"/>
+                        <VerticalStackLayout
+                            Spacing="10"
+                            HorizontalOptions="Center"
+                            VerticalOptions="Center">
+                            <Border
+                                WidthRequest="64"
+                                HeightRequest="64"
+                                BackgroundColor="#FFF1F2"
+                                StrokeThickness="0"
+                                StrokeShape="RoundRectangle 20"
+                                HorizontalOptions="Center">
+                                <Image
+                                    Source="icon_practice_mode.svg"
+                                    WidthRequest="48"
+                                    HeightRequest="48"
+                                    Aspect="AspectFit"
+                                    HorizontalOptions="Center"
+                                    VerticalOptions="Center"/>
+                            </Border>
 
-                        <Label
-                            Text="Belajar santai tanpa timer"
-                            FontSize="12"
-                            TextColor="#9F1239"
-                            HorizontalTextAlignment="Center"
-                            LineBreakMode="WordWrap"/>
-                    </VerticalStackLayout>
+                            <Label
+                                x:Name="PracticeTitleLabel"
+                                Text="Practice"
+                                FontSize="16"
+                                FontAttributes="Bold"
+                                TextColor="#111827"
+                                HorizontalTextAlignment="Center"/>
+
+                            <Label
+                                x:Name="PracticeDescriptionLabel"
+                                Text="Belajar santai tanpa timer"
+                                FontSize="12"
+                                TextColor="#9F1239"
+                                HorizontalTextAlignment="Center"
+                                LineBreakMode="WordWrap"/>
+                        </VerticalStackLayout>
+                    </Grid>
                 </Border>
 
                 <Border
@@ -90,6 +117,10 @@
                     StrokeShape="RoundRectangle 22"
                     Padding="16">
 
+                    <Border.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnSimulationTapped" />
+                    </Border.GestureRecognizers>
+
                     <Border.Shadow>
                         <Shadow
                             Brush="#7C2D12"
@@ -98,40 +129,63 @@
                             Offset="0,2"/>
                     </Border.Shadow>
 
-                    <VerticalStackLayout
-                        Spacing="10"
-                        HorizontalOptions="Center"
-                        VerticalOptions="Center">
+                    <Grid>
                         <Border
-                            WidthRequest="64"
-                            HeightRequest="64"
-                            BackgroundColor="#FFF1F2"
+                            x:Name="SimulationCheckBadge"
+                            WidthRequest="28"
+                            HeightRequest="28"
+                            BackgroundColor="White"
                             StrokeThickness="0"
-                            StrokeShape="RoundRectangle 20"
-                            HorizontalOptions="Center">
-                            <Image
-                                Source="icon_simulation_mode.svg"
-                                WidthRequest="48"
-                                HeightRequest="48"
-                                Aspect="AspectFit"
-                                HorizontalOptions="Center"
-                                VerticalOptions="Center"/>
+                            StrokeShape="RoundRectangle 999"
+                            HorizontalOptions="End"
+                            VerticalOptions="Start"
+                            IsVisible="False">
+                            <Label
+                                Text="✓"
+                                FontSize="14"
+                                FontAttributes="Bold"
+                                TextColor="{StaticResource Primary}"
+                                HorizontalTextAlignment="Center"
+                                VerticalTextAlignment="Center"/>
                         </Border>
 
-                        <Label
-                            Text="Simulation"
-                            FontSize="16"
-                            FontAttributes="Bold"
-                            TextColor="#111827"
-                            HorizontalTextAlignment="Center"/>
+                        <VerticalStackLayout
+                            Spacing="10"
+                            HorizontalOptions="Center"
+                            VerticalOptions="Center">
+                            <Border
+                                WidthRequest="64"
+                                HeightRequest="64"
+                                BackgroundColor="#FFF1F2"
+                                StrokeThickness="0"
+                                StrokeShape="RoundRectangle 20"
+                                HorizontalOptions="Center">
+                                <Image
+                                    Source="icon_simulation_mode.svg"
+                                    WidthRequest="48"
+                                    HeightRequest="48"
+                                    Aspect="AspectFit"
+                                    HorizontalOptions="Center"
+                                    VerticalOptions="Center"/>
+                            </Border>
 
-                        <Label
-                            Text="Paket ujian tetap dengan timer"
-                            FontSize="12"
-                            TextColor="#9A3412"
-                            HorizontalTextAlignment="Center"
-                            LineBreakMode="WordWrap"/>
-                    </VerticalStackLayout>
+                            <Label
+                                x:Name="SimulationTitleLabel"
+                                Text="Simulation"
+                                FontSize="16"
+                                FontAttributes="Bold"
+                                TextColor="#111827"
+                                HorizontalTextAlignment="Center"/>
+
+                            <Label
+                                x:Name="SimulationDescriptionLabel"
+                                Text="Paket ujian tetap dengan timer"
+                                FontSize="12"
+                                TextColor="#9A3412"
+                                HorizontalTextAlignment="Center"
+                                LineBreakMode="WordWrap"/>
+                        </VerticalStackLayout>
+                    </Grid>
                 </Border>
             </Grid>
 

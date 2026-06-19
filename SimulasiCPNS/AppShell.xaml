@@ -34,7 +34,7 @@
 
         <ShellContent
             Title="Kategori"
-            Route="practice"
+            Route="category"
             Icon="icon_category.svg"
             ContentTemplate="{DataTemplate views:CategoryPage}" />
 

@@ -121,4 +121,14 @@ public partial class HomePage : ContentPage
         await ContinueCard.ScaleTo(1.02, 180, Easing.SinInOut);
         await ContinueCard.ScaleTo(1.0, 180, Easing.SinInOut);
     }
+
+    private async void OnPracticeTapped(object sender, TappedEventArgs args)
+    {
+        await Shell.Current.GoToAsync("//main/category?mode=practice");
+    }
+
+    private async void OnSimulationTapped(object sender, TappedEventArgs args)
+    {
+        await Shell.Current.GoToAsync("//main/category?mode=simulation");
+    }
 }

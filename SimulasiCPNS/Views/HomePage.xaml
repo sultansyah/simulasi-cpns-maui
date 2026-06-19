@@ -398,6 +398,10 @@
                         StrokeShape="RoundRectangle 22"
                         Padding="16">
 
+                        <Border.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnPracticeTapped" />
+                        </Border.GestureRecognizers>
+
                         <Border.Shadow>
                             <Shadow
                                 Brush="#881337"
@@ -451,6 +455,10 @@
                         StrokeThickness="1"
                         StrokeShape="RoundRectangle 22"
                         Padding="16">
+
+                        <Border.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnSimulationTapped" />
+                        </Border.GestureRecognizers>
 
                         <Border.Shadow>
                             <Shadow
