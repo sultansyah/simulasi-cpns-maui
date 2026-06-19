@@ -250,7 +250,7 @@
                     </Grid>
                 </Border>
 
-                <!-- Continue Learning -->
+                <!-- Categories -->
                 <Label
                     Text="Kategori"
                     FontSize="18"
@@ -263,8 +263,8 @@
                         <GridItemsLayout
                             Orientation="Vertical"
                             Span="3"
-                            HorizontalItemSpacing="14"
-                            VerticalItemSpacing="14" />
+                            HorizontalItemSpacing="10"
+                            VerticalItemSpacing="10" />
                     </CollectionView.ItemsLayout>
 
                     <CollectionView.ItemTemplate>
