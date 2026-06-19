@@ -12,7 +12,7 @@ public partial class OnboardingPage : ContentPage
 		InitializeComponent();
 
 		_settingService = settingService;
-	}
+    }
 
 	private async void OnStartClicked(object sender, EventArgs e)
 	{
