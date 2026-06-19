@@ -48,30 +48,10 @@
                     VerticalOptions="Start"
                     Margin="0,-10,0,0">
 
-                    <Ellipse
-                        x:Name="MascotLampGlowOuter"
-                        WidthRequest="34"
-                        HeightRequest="34"
-                        Fill="#FDE68A"
-                        Opacity="0.0"
-                        HorizontalOptions="Center"
-                        VerticalOptions="Start"
-                        Margin="0,1,0,0" />
-
-                    <Ellipse
-                        x:Name="MascotLampGlowInner"
-                        WidthRequest="20"
-                        HeightRequest="20"
-                        Fill="#FEF3C7"
-                        Opacity="0.0"
-                        HorizontalOptions="Center"
-                        VerticalOptions="Start"
-                        Margin="0,8,0,0" />
-
                     <Image
                         Source="maskot_cpns.svg"
-                        WidthRequest="110"
-                        HeightRequest="110"
+                        WidthRequest="150"
+                        HeightRequest="150"
                         Aspect="AspectFit"
                         HorizontalOptions="Center"
                         VerticalOptions="Center" />

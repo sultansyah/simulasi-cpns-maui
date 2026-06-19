@@ -1,41 +1,33 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 210">
+  <!-- Robot Ears -->
   <g>
-    <path d="M90 34v17" stroke="#BE123C" stroke-width="7" stroke-linecap="round"/>
-    <rect x="82" y="46" width="16" height="9" rx="4" fill="#BE123C"/>
+    <rect x="27" y="58" width="20" height="32" rx="10" fill="#E11D48"/>
+    <rect x="31" y="64" width="8" height="20" rx="4" fill="#FDA4AF"/>
 
-    <circle cx="90" cy="24" r="13" fill="#FBBF24"/>
-    <circle cx="90" cy="24" r="9" fill="#FCD34D"/>
-    <path d="M83 23c2-6 12-6 14 0" stroke="#FFFBEB" stroke-width="3.5" stroke-linecap="round"/>
-    <path d="M90 27v8" stroke="#FFFBEB" stroke-width="3.5" stroke-linecap="round"/>
-
-    <path d="M90 5v6" stroke="#FBBF24" stroke-width="4" stroke-linecap="round"/>
-    <path d="M74 12l4 4" stroke="#FBBF24" stroke-width="4" stroke-linecap="round"/>
-    <path d="M106 12l-4 4" stroke="#FBBF24" stroke-width="4" stroke-linecap="round"/>
-    <path d="M68 28h6" stroke="#FBBF24" stroke-width="4" stroke-linecap="round"/>
-    <path d="M106 28h6" stroke="#FBBF24" stroke-width="4" stroke-linecap="round"/>
+    <rect x="133" y="58" width="20" height="32" rx="10" fill="#E11D48"/>
+    <rect x="141" y="64" width="8" height="20" rx="4" fill="#FDA4AF"/>
   </g>
 
-  <g>
-    <rect x="27" y="68" width="20" height="32" rx="10" fill="#E11D48"/>
-    <rect x="31" y="74" width="8" height="20" rx="4" fill="#FDA4AF"/>
+  <!-- Robot Head -->
+  <rect x="35" y="40" width="110" height="76" rx="30" fill="#BE123C"/>
+  <rect x="40" y="45" width="100" height="66" rx="26" fill="#E11D48"/>
 
-    <rect x="133" y="68" width="20" height="32" rx="10" fill="#E11D48"/>
-    <rect x="141" y="74" width="8" height="20" rx="4" fill="#FDA4AF"/>
-  </g>
+  <!-- Face Screen -->
+  <rect x="52" y="59" width="76" height="40" rx="19" fill="#052E2B"/>
 
-  <rect x="35" y="50" width="110" height="76" rx="30" fill="#BE123C"/>
-  <rect x="40" y="55" width="100" height="66" rx="26" fill="#E11D48"/>
+  <!-- Eyes -->
+  <ellipse cx="74" cy="79" rx="8" ry="11" fill="#FBCFE8"/>
+  <ellipse cx="106" cy="79" rx="8" ry="11" fill="#FBCFE8"/>
+  <circle cx="71" cy="75" r="3" fill="#FFFFFF"/>
+  <circle cx="103" cy="75" r="3" fill="#FFFFFF"/>
 
-  <rect x="52" y="69" width="76" height="40" rx="19" fill="#052E2B"/>
+  <!-- Smile -->
+  <path d="M80 91c5 5 15 5 20 0" fill="none" stroke="#FDA4AF" stroke-width="4.5" stroke-linecap="round"/>
 
-  <ellipse cx="74" cy="89" rx="8" ry="11" fill="#FBCFE8"/>
-  <ellipse cx="106" cy="89" rx="8" ry="11" fill="#FBCFE8"/>
-  <circle cx="71" cy="85" r="3" fill="#FFFFFF"/>
-  <circle cx="103" cy="85" r="3" fill="#FFFFFF"/>
+  <!-- Highlight on Head -->
+  <path d="M50 56c6-6 15-9 27-9" fill="none" stroke="#FFF1F2" stroke-width="5" stroke-linecap="round" opacity="0.9"/>
 
-  <path d="M80 101c5 5 15 5 20 0" fill="none" stroke="#FDA4AF" stroke-width="4.5" stroke-linecap="round"/>
-  <path d="M50 66c6-6 15-9 27-9" fill="none" stroke="#FFF1F2" stroke-width="5" stroke-linecap="round" opacity="0.9"/>
-
-  <circle cx="58" cy="62" r="4.5" fill="#FDA4AF"/>
-  <circle cx="122" cy="62" r="4.5" fill="#FDA4AF"/>
+  <!-- Cheeks -->
+  <circle cx="58" cy="52" r="4.5" fill="#FDA4AF"/>
+  <circle cx="122" cy="52" r="4.5" fill="#FDA4AF"/>
 </svg>
