@@ -14,6 +14,6 @@ namespace SimulasiCPNS.Models
         public bool ReminderEnabled { get; set; }
         public string ReminderTime { get; set; } = "";
 
-        public DateTime UpdatedAt { get; set; } = DateTime.Now;
+        public DateTime UpdatedAt { get; set; } = DateTime.UtcNow;
     }
 }
