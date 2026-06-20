@@ -29,6 +29,7 @@ namespace SimulasiCPNS
             builder.Services.AddTransient<BookmarkPage>();
             builder.Services.AddTransient<ReportPage>();
             builder.Services.AddTransient<SettingPage>();
+            builder.Services.AddTransient<QuestionPage>();
 
 #if DEBUG
             builder.Logging.AddDebug();

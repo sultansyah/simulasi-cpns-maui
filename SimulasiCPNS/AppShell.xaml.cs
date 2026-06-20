@@ -1,4 +1,5 @@
 using SimulasiCPNS.Services;
+using SimulasiCPNS.Views;
 
 namespace SimulasiCPNS
 {
@@ -7,6 +8,8 @@ namespace SimulasiCPNS
         public AppShell()
         {
             InitializeComponent();
+
+            Routing.RegisterRoute(nameof(QuestionPage), typeof(QuestionPage));
         }
     }
 }

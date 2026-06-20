@@ -11,13 +11,12 @@
     Shell.TabBarTitleColor="#E11D48"
     Shell.TabBarForegroundColor="#E11D48"
     Shell.TabBarUnselectedColor="#6B7280">
-
-    <!-- Page onboarding -->
+    
     <ShellContent
         Route="splash"
         Shell.TabBarIsVisible="False"
         ContentTemplate="{DataTemplate views:SplashPage}" />
-    
+
     <ShellContent
         Route="onboarding"
         Shell.TabBarIsVisible="False"

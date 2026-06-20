@@ -228,6 +228,10 @@
                             <Grid
                                 RowDefinitions="Auto,1">
 
+                                <Grid.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="OnCategoryTapped" />
+                                </Grid.GestureRecognizers>
+
                                 <Grid
                                     Grid.Row="0"
                                     ColumnDefinitions="Auto,*,Auto"

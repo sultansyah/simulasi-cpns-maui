@@ -1,3 +1,4 @@
+using SimulasiCPNS.Models;
 using SimulasiCPNS.Services;
 
 namespace SimulasiCPNS.Views;
@@ -7,7 +8,6 @@ public partial class CategoryPage : ContentPage
 {
     public string _mode = "";
     private readonly QuestionService _questionService;
-    private bool _hasPlayedIntroAnimation;
 
     public string Mode
     {
@@ -77,5 +77,20 @@ public partial class CategoryPage : ContentPage
     private async void OnSimulationTapped(object sender, TappedEventArgs args)
     {
         SetCardModeActive("simulation");
+    }
+
+    private async void OnCategoryTapped(object sender, TappedEventArgs args)
+    {
+        if (sender is not Grid grid) return;
+        if (grid.BindingContext is not CategoryDisplayItem category) return;
+
+        await Shell.Current.GoToAsync(
+            nameof(QuestionPage),
+            new Dictionary<string, object>
+            {
+                ["mode"] = _mode,
+                ["category"] = category
+            }
+        );
     }
 }
