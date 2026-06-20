@@ -51,7 +51,7 @@
 
                     <Label
                         x:Name="GreetingLabel"
-                        Text="Halo, Sultan! 👋"
+                        Text="Halo Teman! 👋"
                         FontSize="28"
                         FontAttributes="Bold"
                         TextColor="White"
