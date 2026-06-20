@@ -1,5 +1,6 @@
 using SimulasiCPNS.Models;
 using SimulasiCPNS.Services;
+using System.ComponentModel;
 
 namespace SimulasiCPNS.Views;
 
@@ -8,6 +9,9 @@ public partial class QuestionPage : ContentPage, IQueryAttributable
     private readonly QuestionService _questionService;
     public string Mode { get; private set; }
     public CategoryDisplayItem Category { get; private set; }
+
+    List<SubCategoryDisplayItem> _subCategories = [];
+    List<Question> _questions = [];
 
     public QuestionPage(QuestionService questionService)
     {
@@ -29,29 +33,37 @@ public partial class QuestionPage : ContentPage, IQueryAttributable
         TitlePage.Text = Category.Category;
         DescriptionPage.Text = Category.Description;
 
-        List<SubCategoryDisplayItem> subCategories = [];
-        List<Question> questions = [];
-
         if (Category.Category == "Mixed")
         {
-            questions = await _questionService.GetQuestionsAsync();
+            _questions = await _questionService.GetQuestionsAsync();
         } else
         {
-            questions = await _questionService.GetQuestionsByCategoryAsync(Category.Category);
-            subCategories = await _questionService.GetSubCategoryByCategoryAsync(Category.Category);
+            _questions = await _questionService.GetQuestionsByCategoryAsync(Category.Category);
+            _subCategories = await _questionService.GetSubCategoryByCategoryAsync(Category.Category);
         }
 
-        var subCategoriesList = subCategories.Select(c => c.SubCategory);
-        if (Category.Category != "Mixed") subCategoriesList = subCategoriesList.Prepend("Semua");
-        SubCategoryListLayout.BindingContext = subCategoriesList;
+        if (Category.Category != "Mixed")
+        {
+            _subCategories = _subCategories.Prepend(new SubCategoryDisplayItem
+            {
+                SubCategory = "Semua",
+                IsSelected = true
+            }).ToList();
+        }
         
-        QuestionListLayout.BindingContext = questions;
+        SubCategoryListLayout.BindingContext = _subCategories;
+        
+        QuestionListLayout.BindingContext = _questions;
     }
 
     private async void OnSubCategoryTapped(object sender, TappedEventArgs e)
     {
-        if (sender is Border border &&
-            border.BindingContext is string subCategory)
+        var tappedItem = (SubCategoryDisplayItem)((BindableObject)sender).BindingContext;
+        foreach (var item in _subCategories) item.IsSelected = false;
+
+        tappedItem.IsSelected = true;
+
+        if (sender is Border border && border.BindingContext is SubCategoryDisplayItem subCategory)
         {
             List<Question> questions = [];
             if (Category.Category == "Mixed")
@@ -59,14 +71,15 @@ public partial class QuestionPage : ContentPage, IQueryAttributable
                 questions = await _questionService.GetQuestionsAsync();
                 QuestionListLayout.BindingContext = questions;
                 return;
-            } 
-            if (Category.Category != "Mixed" && subCategory == "Semua")
+            }
+
+            if (Category.Category != "Mixed" && subCategory.SubCategory == "Semua")
             {
                 questions = await _questionService.GetQuestionsByCategoryAsync(Category.Category);
             }
             else
             {
-                questions = await _questionService.GetQuestionsBySubCategoryAsync(Category.Category, subCategory);
+                questions = await _questionService.GetQuestionsBySubCategoryAsync(Category.Category, subCategory.SubCategory);
             }
 
             QuestionListLayout.BindingContext = questions;

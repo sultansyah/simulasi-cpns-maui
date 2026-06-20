@@ -84,7 +84,8 @@
                         <BindableLayout.ItemTemplate>
                             <DataTemplate>
                                 <Border
-                                    BackgroundColor="{StaticResource Primary}"
+                                    x:Name="SubCategoryBorder"
+                                    BackgroundColor="{Binding BackgroundColor}"
                                     StrokeThickness="0"
                                     StrokeShape="RoundRectangle 999"
                                     Padding="14,8">
@@ -94,10 +95,11 @@
                                     </Border.GestureRecognizers>
 
                                     <Label
-                                        Text="{Binding .}"
+                                        x:Name="SubCategoryLabel"
+                                        Text="{Binding SubCategory}"
                                         FontSize="12"
                                         FontAttributes="Bold"
-                                        TextColor="White" />
+                                        TextColor="{Binding TextColor}" />
 
                                 </Border>
                             </DataTemplate>
