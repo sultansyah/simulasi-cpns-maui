@@ -45,7 +45,7 @@ namespace SimulasiCPNS.Services
 
             foreach (var question in questions)
             {
-                question.CreatedAt = DateTime.Now;
+                question.CreatedAt = DateTime.UtcNow;
             }
 
             await database.InsertAllAsync(questions);
