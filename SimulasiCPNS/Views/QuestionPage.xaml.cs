@@ -1,21 +1,24 @@
-using SimulasiCPNS.Models;
+﻿using SimulasiCPNS.Models;
 using SimulasiCPNS.Services;
+using SimulasiCPNS.Enums;
 
 namespace SimulasiCPNS.Views;
 
 public partial class QuestionPage : ContentPage, IQueryAttributable
 {
     private readonly QuestionService _questionService;
+    private readonly BookmarkedService _bookmarkedService;
     public string Mode { get; private set; }
     public CategoryDisplayItem Category { get; private set; }
 
     List<SubCategoryDisplayItem> _subCategories = [];
     List<Question> _questions = [];
 
-    public QuestionPage(QuestionService questionService)
+    public QuestionPage(QuestionService questionService, BookmarkedService bookmarkedService)
     {
         InitializeComponent();
         _questionService = questionService;
+        _bookmarkedService = bookmarkedService;
     }
 
     public void ApplyQueryAttributes(IDictionary<string, object> query)
@@ -90,6 +93,33 @@ public partial class QuestionPage : ContentPage, IQueryAttributable
     private async void OnBackTapped(object sender, TappedEventArgs e)
     {
         await Shell.Current.Navigation.PopAsync();
+    }
+
+    private async void OnBookmarkTapped(object sender, TappedEventArgs e)
+    {
+        var label = sender as Label;
+        var tappedItem = label?.BindingContext as Question;
+
+        var isExist = await _questionService.GetQuestionById(tappedItem.Id);
+        if (isExist is null) return;
+
+        var isBookmarkExist = await _bookmarkedService.GetByQuestionIdAsync(isExist.Id);
+        if (isBookmarkExist is null)
+        {
+            await _bookmarkedService.Insert(isExist.Id, BookmarkedQuestionType.Bookmark);
+            label?.Text = "marked";
+            return;
+        }
+
+        if(isBookmarkExist.Type != BookmarkedQuestionType.Bookmark.ToString())
+        {
+            await _bookmarkedService.Insert(isExist.Id, BookmarkedQuestionType.Bookmark);
+            label?.Text = "marked";
+            return;
+        }
+
+        await _bookmarkedService.Delete(isBookmarkExist);
+        label?.Text = "☆";
     }
 
     private List<Question> AddNumberOnQuestion(List<Question> questions)

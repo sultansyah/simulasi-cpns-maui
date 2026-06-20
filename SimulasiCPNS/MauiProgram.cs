@@ -20,6 +20,7 @@ namespace SimulasiCPNS
             builder.Services.AddSingleton<DatabaseService>();
             builder.Services.AddSingleton<SettingService>();
             builder.Services.AddSingleton<QuestionService>();
+            builder.Services.AddSingleton<BookmarkedService>();
             builder.Services.AddSingleton<AppShell>();
 
             builder.Services.AddTransient<SplashPage>();

@@ -186,7 +186,11 @@
                                         Text="☆"
                                         FontSize="18"
                                         TextColor="#9CA3AF"
-                                        VerticalTextAlignment="Center" />
+                                        VerticalTextAlignment="Center">
+                                        <Label.GestureRecognizers>
+                                            <TapGestureRecognizer Tapped="OnBookmarkTapped" />
+                                        </Label.GestureRecognizers>
+                                    </Label>
 
                                 </Grid>
 

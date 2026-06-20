@@ -12,6 +12,12 @@ namespace SimulasiCPNS.Services
             return await database.Table<Question>().ToListAsync();
         }
 
+        public async Task<Question?> GetQuestionById(int id)
+        {
+            var questions = await GetQuestionsAsync();
+            return questions.Where(q => q.Id == id).FirstOrDefault();
+        }
+
         public async Task<List<Question>> GetQuestionsByCategoryAsync(string category)
         {
             var questions = await GetQuestionsAsync();
