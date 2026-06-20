@@ -26,7 +26,11 @@
                         Text="←"
                         FontSize="22"
                         TextColor="White"
-                        VerticalTextAlignment="Center" />
+                        VerticalTextAlignment="Center">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnBackTapped" />
+                        </Label.GestureRecognizers>
+                    </Label>
 
                     <VerticalStackLayout
                         Grid.Column="1"

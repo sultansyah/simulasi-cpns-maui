@@ -72,4 +72,9 @@ public partial class QuestionPage : ContentPage, IQueryAttributable
             QuestionListLayout.BindingContext = questions;
         }
     }
+
+    private async void OnBackTapped(object sender, TappedEventArgs e)
+    {
+        await Shell.Current.Navigation.PopAsync();
+    }
 }
