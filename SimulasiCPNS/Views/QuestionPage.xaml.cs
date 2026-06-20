@@ -51,7 +51,9 @@ public partial class QuestionPage : ContentPage, IQueryAttributable
         }
         
         SubCategoryListLayout.BindingContext = _subCategories;
-        
+
+        _questions = AddNumberOnQuestion(_questions);
+
         QuestionListLayout.BindingContext = _questions;
     }
 
@@ -79,10 +81,7 @@ public partial class QuestionPage : ContentPage, IQueryAttributable
                 questions = await _questionService.GetQuestionsBySubCategoryAsync(Category.Category, subCategory.SubCategory);
             }
 
-            for (int i = 0; i < questions.Count; i++)
-            {
-                questions[i].DisplayNumber = i + 1;
-            }
+            questions = AddNumberOnQuestion(questions);
 
             QuestionListLayout.BindingContext = questions;
         }
@@ -91,5 +90,15 @@ public partial class QuestionPage : ContentPage, IQueryAttributable
     private async void OnBackTapped(object sender, TappedEventArgs e)
     {
         await Shell.Current.Navigation.PopAsync();
+    }
+
+    private List<Question> AddNumberOnQuestion(List<Question> questions)
+    {
+        for (int i = 0; i < questions.Count; i++)
+        {
+            questions[i].DisplayNumber = i + 1;
+        }
+
+        return questions;
     }
 }
