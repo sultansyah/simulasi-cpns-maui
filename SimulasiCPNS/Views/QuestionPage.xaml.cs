@@ -13,6 +13,7 @@ public partial class QuestionPage : ContentPage, IQueryAttributable
 
     List<SubCategoryDisplayItem> _subCategories = [];
     List<Question> _questions = [];
+    HashSet<int> _bookmarkedIds = [];
 
     public QuestionPage(QuestionService questionService, BookmarkedService bookmarkedService)
     {
@@ -57,7 +58,23 @@ public partial class QuestionPage : ContentPage, IQueryAttributable
 
         _questions = AddNumberOnQuestion(_questions);
 
+        await LoadBookmarkStatesAsync();
+
         QuestionListLayout.BindingContext = _questions;
+    }
+
+    private async Task LoadBookmarkStatesAsync()
+    {
+        var bookmarks = await _bookmarkedService.GetBookmarkedAsync();
+        _bookmarkedIds = bookmarks
+            .Where(b => b.Type == BookmarkedQuestionType.Bookmark.ToString())
+            .Select(b => b.QuestionId)
+            .ToHashSet();
+
+        foreach (var question in _questions)
+        {
+            question.IsBookmarked = _bookmarkedIds.Contains(question.Id);
+        }
     }
 
     private async void OnSubCategoryTapped(object sender, TappedEventArgs e)
@@ -86,6 +103,9 @@ public partial class QuestionPage : ContentPage, IQueryAttributable
 
             questions = AddNumberOnQuestion(questions);
 
+            foreach (var q in questions)
+                q.IsBookmarked = _bookmarkedIds.Contains(q.Id);
+
             QuestionListLayout.BindingContext = questions;
         }
     }
@@ -97,29 +117,23 @@ public partial class QuestionPage : ContentPage, IQueryAttributable
 
     private async void OnBookmarkTapped(object sender, TappedEventArgs e)
     {
-        var label = sender as Label;
-        var tappedItem = label?.BindingContext as Question;
+        if (sender is not VisualElement element) return;
+        if (element.BindingContext is not Question question) return;
 
-        var isExist = await _questionService.GetQuestionById(tappedItem.Id);
-        if (isExist is null) return;
-
-        var isBookmarkExist = await _bookmarkedService.GetByQuestionIdAsync(isExist.Id);
-        if (isBookmarkExist is null)
+        if (question.IsBookmarked)
         {
-            await _bookmarkedService.Insert(isExist.Id, BookmarkedQuestionType.Bookmark);
-            label?.Text = "marked";
-            return;
+            var existing = await _bookmarkedService.GetByQuestionIdAsync(question.Id);
+            if (existing is not null)
+                await _bookmarkedService.Delete(existing);
+            question.IsBookmarked = false;
+            _bookmarkedIds.Remove(question.Id);
         }
-
-        if(isBookmarkExist.Type != BookmarkedQuestionType.Bookmark.ToString())
+        else
         {
-            await _bookmarkedService.Insert(isExist.Id, BookmarkedQuestionType.Bookmark);
-            label?.Text = "marked";
-            return;
+            await _bookmarkedService.Insert(question.Id, BookmarkedQuestionType.Bookmark);
+            question.IsBookmarked = true;
+            _bookmarkedIds.Add(question.Id);
         }
-
-        await _bookmarkedService.Delete(isBookmarkExist);
-        label?.Text = "☆";
     }
 
     private List<Question> AddNumberOnQuestion(List<Question> questions)

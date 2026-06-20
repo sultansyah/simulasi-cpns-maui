@@ -181,16 +181,34 @@
                                     </VerticalStackLayout>
 
                                     <!-- BOOKMARK -->
-                                    <Label
+                                    <Grid
                                         Grid.Column="2"
-                                        Text="☆"
-                                        FontSize="18"
-                                        TextColor="#9CA3AF"
-                                        VerticalTextAlignment="Center">
-                                        <Label.GestureRecognizers>
+                                        WidthRequest="28"
+                                        HeightRequest="28"
+                                        VerticalOptions="Center"
+                                        HorizontalOptions="Center">
+                                        <Grid.GestureRecognizers>
                                             <TapGestureRecognizer Tapped="OnBookmarkTapped" />
-                                        </Label.GestureRecognizers>
-                                    </Label>
+                                        </Grid.GestureRecognizers>
+
+                                        <Image
+                                            Source="icon_star_empty.svg"
+                                            WidthRequest="22"
+                                            HeightRequest="22"
+                                            Aspect="AspectFit"
+                                            VerticalOptions="Center"
+                                            HorizontalOptions="Center"
+                                            IsVisible="{Binding IsBookmarked, Converter={StaticResource InverseBoolConverter}}" />
+
+                                        <Image
+                                            Source="icon_star_filled.svg"
+                                            WidthRequest="22"
+                                            HeightRequest="22"
+                                            Aspect="AspectFit"
+                                            VerticalOptions="Center"
+                                            HorizontalOptions="Center"
+                                            IsVisible="{Binding IsBookmarked}" />
+                                    </Grid>
 
                                 </Grid>
 
