@@ -33,6 +33,8 @@ public partial class QuestionPage : ContentPage, IQueryAttributable
     {
         base.OnAppearing();
 
+        SetupButtons(true);
+
         TitlePage.Text = Category.Category;
         DescriptionPage.Text = Category.Description;
 
@@ -123,8 +125,8 @@ public partial class QuestionPage : ContentPage, IQueryAttributable
         if (question.IsBookmarked)
         {
             var existing = await _bookmarkedService.GetByQuestionIdAsync(question.Id);
-            if (existing is not null)
-                await _bookmarkedService.Delete(existing);
+            if (existing is not null) await _bookmarkedService.Delete(existing);
+
             question.IsBookmarked = false;
             _bookmarkedIds.Remove(question.Id);
         }
@@ -144,5 +146,31 @@ public partial class QuestionPage : ContentPage, IQueryAttributable
         }
 
         return questions;
+    }
+
+    private void SetupButtons(bool showRightButton)
+    {
+        ButtonGrid.ColumnSpacing = showRightButton ? 12 : 0;
+        ButtonGrid.ColumnDefinitions[0].Width = GridLength.Star;
+        ButtonGrid.ColumnDefinitions[1].Width = showRightButton ? GridLength.Star : new GridLength(0);
+
+        if (showRightButton)
+        {
+            BtnRight.IsVisible = true;
+
+            Grid.SetColumn(BtnLeft, 0);
+            Grid.SetColumnSpan(BtnLeft, 1);
+
+            Grid.SetColumn(BtnRight, 1);
+            Grid.SetColumnSpan(BtnRight, 1);
+            ButtonGrid.InvalidateMeasure();
+            return;
+        }
+
+        BtnRight.IsVisible = false;
+
+        Grid.SetColumn(BtnLeft, 0);
+        Grid.SetColumnSpan(BtnLeft, 2);
+        ButtonGrid.InvalidateMeasure();
     }
 }

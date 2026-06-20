@@ -28,7 +28,7 @@
                         TextColor="White"
                         VerticalTextAlignment="Center">
                         <Label.GestureRecognizers>
-                            <TapGestureRecognizer Tapped="OnBackTapped" />
+                            <TapGestureRecognizer Tapped="OnBackTapped"/>
                         </Label.GestureRecognizers>
                     </Label>
 
@@ -42,13 +42,13 @@
                             Text=""
                             FontSize="20"
                             FontAttributes="Bold"
-                            TextColor="White" />
+                            TextColor="White"/>
 
                         <Label
                             x:Name="DescriptionPage"
                             Text=""
                             FontSize="13"
-                            TextColor="#FFE4E6" />
+                            TextColor="#FFE4E6"/>
 
                     </VerticalStackLayout>
 
@@ -76,7 +76,7 @@
                     Orientation="Horizontal"
                     HorizontalScrollBarVisibility="Never">
 
-                    <HorizontalStackLayout 
+                    <HorizontalStackLayout
                         Spacing="8"
                         x:Name="SubCategoryListLayout"
                         BindableLayout.ItemsSource="{Binding}">
@@ -91,7 +91,7 @@
                                     Padding="14,8">
 
                                     <Border.GestureRecognizers>
-                                        <TapGestureRecognizer Tapped="OnSubCategoryTapped" />
+                                        <TapGestureRecognizer Tapped="OnSubCategoryTapped"/>
                                     </Border.GestureRecognizers>
 
                                     <Label
@@ -99,7 +99,7 @@
                                         Text="{Binding SubCategory}"
                                         FontSize="12"
                                         FontAttributes="Bold"
-                                        TextColor="{Binding TextColor}" />
+                                        TextColor="{Binding TextColor}"/>
 
                                 </Border>
                             </DataTemplate>
@@ -111,7 +111,7 @@
                 </ScrollView>
 
                 <!-- LIST SOAL -->
-                <CollectionView 
+                <CollectionView
                     Grid.Row="1"
                     x:Name="QuestionListLayout"
                     ItemsSource="{Binding}">
@@ -145,7 +145,7 @@
                                             FontAttributes="Bold"
                                             TextColor="White"
                                             HorizontalTextAlignment="Center"
-                                            VerticalTextAlignment="Center" />
+                                            VerticalTextAlignment="Center"/>
 
                                     </Border>
 
@@ -161,7 +161,7 @@
                                             FontAttributes="Bold"
                                             TextColor="#111827"
                                             MaxLines="1"
-                                            LineBreakMode="TailTruncation" />
+                                            LineBreakMode="TailTruncation"/>
 
                                         <Border
                                             BackgroundColor="Green"
@@ -174,7 +174,7 @@
                                                 Text="{Binding DifficultyDisplay}"
                                                 FontSize="11"
                                                 FontAttributes="Bold"
-                                                TextColor="White" />
+                                                TextColor="White"/>
 
                                         </Border>
 
@@ -188,7 +188,7 @@
                                         VerticalOptions="Center"
                                         HorizontalOptions="Center">
                                         <Grid.GestureRecognizers>
-                                            <TapGestureRecognizer Tapped="OnBookmarkTapped" />
+                                            <TapGestureRecognizer Tapped="OnBookmarkTapped"/>
                                         </Grid.GestureRecognizers>
 
                                         <Image
@@ -198,7 +198,7 @@
                                             Aspect="AspectFit"
                                             VerticalOptions="Center"
                                             HorizontalOptions="Center"
-                                            IsVisible="{Binding IsBookmarked, Converter={StaticResource InverseBoolConverter}}" />
+                                            IsVisible="{Binding IsBookmarked, Converter={StaticResource InverseBoolConverter}}"/>
 
                                         <Image
                                             Source="icon_star_filled.svg"
@@ -207,7 +207,7 @@
                                             Aspect="AspectFit"
                                             VerticalOptions="Center"
                                             HorizontalOptions="Center"
-                                            IsVisible="{Binding IsBookmarked}" />
+                                            IsVisible="{Binding IsBookmarked}"/>
                                     </Grid>
 
                                 </Grid>
@@ -221,14 +221,41 @@
                 </CollectionView>
 
                 <!-- BUTTON -->
-                <Button
-                    Grid.Row="2"
-                    HeightRequest="52"
-                    CornerRadius="12"
-                    BackgroundColor="{StaticResource Primary}"
-                    Text="Kerjakan Semua Soal (20)"
-                    FontAttributes="Bold"
-                    TextColor="White" />
+                <Grid x:Name="ButtonGrid"
+                      Grid.Row="2"
+                      ColumnSpacing="0">
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="0"/>
+                    </Grid.ColumnDefinitions>
+
+                    <!-- Tombol kiri -->
+                    <Button
+                        x:Name="BtnLeft"
+                        Grid.Column="0"
+                        Grid.ColumnSpan="2"
+                        HeightRequest="52"
+                        HorizontalOptions="Fill"
+                        CornerRadius="12"
+                        BackgroundColor="{StaticResource Primary}"
+                        Text="Kerjakan Semua Soal"
+                        FontAttributes="Bold"
+                        TextColor="White"/>
+
+                    <!-- Tombol kanan -->
+                    <Button
+                        x:Name="BtnRight"
+                        Grid.Column="1"
+                        HeightRequest="52"
+                        HorizontalOptions="Fill"
+                        IsVisible="False"
+                        CornerRadius="12"
+                        BackgroundColor="{StaticResource Secondary}"
+                        Text="Lanjutkan"
+                        FontAttributes="Bold"
+                        TextColor="{StaticResource SecondaryDarkText}"/>
+                </Grid>
 
             </Grid>
 
