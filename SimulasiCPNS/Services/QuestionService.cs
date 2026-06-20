@@ -12,6 +12,61 @@ namespace SimulasiCPNS.Services
             return await database.Table<Question>().ToListAsync();
         }
 
+        public async Task<List<Question>> GetQuestionsByCategoryAsync(string category)
+        {
+            var questions = await GetQuestionsAsync();
+            return questions.Where(q => q.Category == category).ToList();
+        }
+
+        public async Task<List<Question>> GetQuestionsBySubCategoryAsync(string category, string subCategory)
+        {
+            var questions = await GetQuestionsAsync();
+            return questions.Where(q => q.Category == category && q.SubCategory == subCategory).ToList();
+        }
+
+        public async Task<List<SubCategoryDisplayItem>> GetSubCategoryByCategoryAsync(string category)
+        {
+            var questions = await GetQuestionsAsync();
+            var subCategories = questions
+                .Where(q => q.Category == category)
+                .GroupBy(q => q.SubCategory)
+                .Select(q =>
+                {
+                    var firstQuestion = q.First();
+
+                    return new SubCategoryDisplayItem
+                    {
+                        SubCategory = firstQuestion.SubCategory,
+                        SubCategoryIcon = firstQuestion.SubCategoryIcon,
+                        Difficulty = firstQuestion.Difficulty
+                    };
+                })
+                .Distinct()
+                .ToList();
+            return subCategories;
+        }
+
+        public async Task<List<SubCategoryDisplayItem>> GetSubCategoriesAsync()
+        {
+            var questions = await GetQuestionsAsync();
+            var subCategories = questions
+                .GroupBy(q => q.SubCategory)
+                .Select(q =>
+                {
+                    var firstQuestion = q.First();
+
+                    return new SubCategoryDisplayItem
+                    {
+                        SubCategory = firstQuestion.SubCategory,
+                        SubCategoryIcon = firstQuestion.SubCategoryIcon,
+                        Difficulty = firstQuestion.Difficulty
+                    };
+                })
+                .Distinct()
+                .ToList();
+            return subCategories;
+        }
+
         public async Task<List<CategoryDisplayItem>> GetCategoriesAsync()
         {
             var questions = await GetQuestionsAsync();
@@ -32,6 +87,7 @@ namespace SimulasiCPNS.Services
                         Difficulty = firstQuestion.Difficulty
                     };
                 })
+                .Distinct()
                 .OrderBy(item => GetCategoryOrder(item.Category))
                 .ToList();
 

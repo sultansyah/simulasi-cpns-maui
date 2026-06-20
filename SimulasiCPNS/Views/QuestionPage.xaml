@@ -14,7 +14,7 @@
             Grid.Row="0"
             BackgroundColor="{StaticResource Primary}"
             StrokeThickness="0"
-            Padding="20,50,20,24">
+            Padding="20,30,20,24">
 
             <Grid
                 RowDefinitions="Auto,Auto"
@@ -34,13 +34,15 @@
                         Spacing="2">
 
                         <Label
-                            Text="TIU - Numerik"
+                            x:Name="TitlePage"
+                            Text=""
                             FontSize="20"
                             FontAttributes="Bold"
                             TextColor="White" />
 
                         <Label
-                            Text="Pilih soal yang ingin kamu kerjakan."
+                            x:Name="DescriptionPage"
+                            Text=""
                             FontSize="13"
                             TextColor="#FFE4E6" />
 
@@ -82,6 +84,10 @@
                                     StrokeThickness="0"
                                     StrokeShape="RoundRectangle 999"
                                     Padding="14,8">
+
+                                    <Border.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="OnSubCategoryTapped" />
+                                    </Border.GestureRecognizers>
 
                                     <Label
                                         Text="{Binding .}"
@@ -159,7 +165,7 @@
                                             HorizontalOptions="Start">
 
                                             <Label
-                                                Text="{Binding Difficulty}"
+                                                Text="{Binding DifficultyDisplay}"
                                                 FontSize="11"
                                                 FontAttributes="Bold"
                                                 TextColor="White" />

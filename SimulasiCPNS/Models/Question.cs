@@ -1,7 +1,4 @@
 ﻿using SQLite;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace SimulasiCPNS.Models
 {
@@ -27,5 +24,8 @@ namespace SimulasiCPNS.Models
         public string Explanation { get; set; } = "";
 
         public DateTime CreatedAt { get; set; } = DateTime.Now;
+
+        [Ignore]
+        public string DifficultyDisplay => string.IsNullOrWhiteSpace(Difficulty) ? "" : char.ToUpper(Difficulty[0]) + Difficulty[1..];
     }
 }
