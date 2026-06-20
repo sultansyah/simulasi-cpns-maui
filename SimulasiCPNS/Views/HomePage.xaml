@@ -59,7 +59,7 @@
                         LineBreakMode="WordWrap"/>
 
                     <Label
-                        Text="Tetap konsisten. Satu sesi yang selesai hari ini lebih berarti daripada rencana panjang yang ditunda."
+                        Text="Sedikit hari ini lebih baik daripada nanti."
                         FontSize="14"
                         LineHeight="1.2"
                         TextColor="#FFE4E6"
