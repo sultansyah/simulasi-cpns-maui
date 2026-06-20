@@ -27,5 +27,7 @@ namespace SimulasiCPNS.Models
 
         [Ignore]
         public string DifficultyDisplay => string.IsNullOrWhiteSpace(Difficulty) ? "" : char.ToUpper(Difficulty[0]) + Difficulty[1..];
+        [Ignore]
+        public int DisplayNumber { get; set; }
     }
 }

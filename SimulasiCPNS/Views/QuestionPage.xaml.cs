@@ -1,6 +1,5 @@
 using SimulasiCPNS.Models;
 using SimulasiCPNS.Services;
-using System.ComponentModel;
 
 namespace SimulasiCPNS.Views;
 
@@ -69,8 +68,6 @@ public partial class QuestionPage : ContentPage, IQueryAttributable
             if (Category.Category == "Mixed")
             {
                 questions = await _questionService.GetQuestionsAsync();
-                QuestionListLayout.BindingContext = questions;
-                return;
             }
 
             if (Category.Category != "Mixed" && subCategory.SubCategory == "Semua")
@@ -80,6 +77,11 @@ public partial class QuestionPage : ContentPage, IQueryAttributable
             else
             {
                 questions = await _questionService.GetQuestionsBySubCategoryAsync(Category.Category, subCategory.SubCategory);
+            }
+
+            for (int i = 0; i < questions.Count; i++)
+            {
+                questions[i].DisplayNumber = i + 1;
             }
 
             QuestionListLayout.BindingContext = questions;
